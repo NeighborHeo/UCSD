@@ -1,0 +1,53 @@
+Package: PredDrugInducedKidneyInjury
+Type: Package
+Title: A Skeleton for Prediction Development Studies that use the PatientLevelPrediction Framework
+Version: 0.0.6
+Author: Seng Chan You [aut],
+        Yongjae Lee [aut]
+Maintainer: Seng Chan You <seng.chan.you@ohdsi.org>
+Description: A skeleton package to be used as a starting point when implementing patient-level prediction development studies.
+Depends:
+    R(>= 3.6.0)
+Imports:
+    DatabaseConnector,
+    jsonlite,
+    magrittr,
+    PatientLevelPrediction (>= 4.3.7),
+    ParallelLogger,
+    reshape2,
+    SqlRender,
+    utils,
+    xgboost
+Suggests:
+    Andromeda,
+    DT,
+    devtools,
+    FeatureExtraction,
+    ggplot2,
+    grDevices,
+    gridExtra,
+    htmltools,
+    Hydra,
+    knitr,
+    officer,
+    OhdsiSharing,
+    plotly,
+    rmarkdown,
+    R.utils,
+    shiny,
+    shinycssloaders,
+    shinydashboard,
+    shinyWidgets,
+    VennDiagram
+Remotes:
+    ohdsi/FeatureExtraction,
+    ohdsi/CohortMethod,
+    ohdsi/MethodEvaluation,
+    ohdsi/CohortDiagnostics,
+    ohdsi/ROhdsiWebApi,
+    ohdsi/PhenotypeLibrary,
+    ohdsi/CirceR
+License: Apache License 2.0
+VignetteBuilder: knitr
+LazyData: TRUE
+RoxygenNote: 7.1.1
