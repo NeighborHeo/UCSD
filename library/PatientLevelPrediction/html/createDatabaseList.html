@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create a list with the database details and database meta...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for createDatabaseList {PatientLevelPrediction}"><tr><td>createDatabaseList {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create a list with the database details and database meta data entries</h2>
+
+<h3>Description</h3>
+
+<p>This function creates a list with the database details and database meta data entries used in the study
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+createDatabaseList(cdmDatabaseSchemas, cdmDatabaseNames, databaseRefIds = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>cdmDatabaseSchemas</code></td>
+<td>
+<p>(string vector) A vector of the cdmDatabaseSchemas used in the study - if the schemas are not unique per database please also specify databaseRefId</p>
+</td></tr>
+<tr valign="top"><td><code>cdmDatabaseNames</code></td>
+<td>
+<p>Sharable names for the databases</p>
+</td></tr>
+<tr valign="top"><td><code>databaseRefIds</code></td>
+<td>
+<p>(string vector) Unique database identifiers - what you specified as cdmDatabaseId in <code>PatientLevelPrediction::createDatabaseDetails()</code> when developing the models</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This function is used when inserting database details into the PatientLevelPrediction database results schema
+</p>
+
+
+<h3>Value</h3>
+
+<p>Returns a data.frame with the database details
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

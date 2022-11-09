@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Creates list of settings specifying what parts of runPlp to...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for createExecuteSettings {PatientLevelPrediction}"><tr><td>createExecuteSettings {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Creates list of settings specifying what parts of runPlp to execute</h2>
+
+<h3>Description</h3>
+
+<p>Creates list of settings specifying what parts of runPlp to execute
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+createExecuteSettings(
+  runSplitData = F,
+  runSampleData = F,
+  runfeatureEngineering = F,
+  runPreprocessData = F,
+  runModelDevelopment = F,
+  runCovariateSummary = F
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>runSplitData</code></td>
+<td>
+<p>TRUE or FALSE whether to split data into train/test</p>
+</td></tr>
+<tr valign="top"><td><code>runSampleData</code></td>
+<td>
+<p>TRUE or FALSE whether to over or under sample</p>
+</td></tr>
+<tr valign="top"><td><code>runfeatureEngineering</code></td>
+<td>
+<p>TRUE or FALSE whether to do feature engineering</p>
+</td></tr>
+<tr valign="top"><td><code>runPreprocessData</code></td>
+<td>
+<p>TRUE or FALSE whether to do preprocessing</p>
+</td></tr>
+<tr valign="top"><td><code>runModelDevelopment</code></td>
+<td>
+<p>TRUE or FALSE whether to develop the model</p>
+</td></tr>
+<tr valign="top"><td><code>runCovariateSummary</code></td>
+<td>
+<p>TRUE or FALSE whether to create covariate summary</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>define what parts of runPlp to execute
+</p>
+
+
+<h3>Value</h3>
+
+<p>list with TRUE/FALSE for each part of runPlp
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

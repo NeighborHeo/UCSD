@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: externalValidateDbPlp - Validate a model on new databases</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for externalValidateDbPlp {PatientLevelPrediction}"><tr><td>externalValidateDbPlp {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>externalValidateDbPlp - Validate a model on new databases</h2>
+
+<h3>Description</h3>
+
+<p>This function extracts data using a user specified connection and cdm_schema, applied the model and then calcualtes the performance
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+externalValidateDbPlp(
+  plpModel,
+  validationDatabaseDetails = createDatabaseDetails(),
+  validationRestrictPlpDataSettings = createRestrictPlpDataSettings(),
+  settings = createValidationSettings(recalibrate = "weakRecalibration"),
+  logSettings = createLogSettings(verbosity = "INFO", logName = "validatePLP"),
+  outputFolder = getwd()
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>plpModel</code></td>
+<td>
+<p>The model object returned by runPlp() containing the trained model</p>
+</td></tr>
+<tr valign="top"><td><code>validationDatabaseDetails</code></td>
+<td>
+<p>A list of objects of class <code>databaseDetails</code> created using <code>createDatabaseDetails</code></p>
+</td></tr>
+<tr valign="top"><td><code>validationRestrictPlpDataSettings</code></td>
+<td>
+<p>A list of population restriction settings created by <code>createRestrictPlpDataSettings()</code></p>
+</td></tr>
+<tr valign="top"><td><code>settings</code></td>
+<td>
+<p>A settings object of class <code>validationSettings</code> created using <code>createValidationSettings</code></p>
+</td></tr>
+<tr valign="top"><td><code>logSettings</code></td>
+<td>
+<p>An object of <code>logSettings</code> created using <code>createLogSettings</code> 
+specifying how the logging is done</p>
+</td></tr>
+<tr valign="top"><td><code>outputFolder</code></td>
+<td>
+<p>The directory to save the validation results to (subfolders are created per database in validationDatabaseDetails)</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Users need to input a trained model (the output of runPlp()) and new database connections. The function will return a list of length equal to the 
+number of cdm_schemas input with the performance on the new data
+</p>
+
+
+<h3>Value</h3>
+
+<p>A list containing the performance for each validation_schema
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

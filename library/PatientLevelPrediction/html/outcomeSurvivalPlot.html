@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot the outcome incidence over time</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for outcomeSurvivalPlot {PatientLevelPrediction}"><tr><td>outcomeSurvivalPlot {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot the outcome incidence over time</h2>
+
+<h3>Description</h3>
+
+<p>Plot the outcome incidence over time
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+outcomeSurvivalPlot(
+  plpData,
+  outcomeId,
+  populationSettings = createStudyPopulationSettings(binary = T, includeAllOutcomes = T,
+    firstExposureOnly = FALSE, washoutPeriod = 0, removeSubjectsWithPriorOutcome = TRUE,
+    priorOutcomeLookback = 99999, requireTimeAtRisk = F, riskWindowStart = 1, startAnchor
+    = "cohort start", riskWindowEnd = 3650, endAnchor = "cohort start"),
+  riskTable = T,
+  confInt = T,
+  yLabel = "Fraction of those who are outcome free in target population"
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>plpData</code></td>
+<td>
+<p>The plpData object returned by running getPlpData()</p>
+</td></tr>
+<tr valign="top"><td><code>outcomeId</code></td>
+<td>
+<p>The cohort id corresponding to the outcome</p>
+</td></tr>
+<tr valign="top"><td><code>populationSettings</code></td>
+<td>
+<p>The population settings created using <code>createStudyPopulationSettings</code></p>
+</td></tr>
+<tr valign="top"><td><code>riskTable</code></td>
+<td>
+<p>(binary) Whether to include a table at the bottom  of the plot showing the number of people at risk over time</p>
+</td></tr>
+<tr valign="top"><td><code>confInt</code></td>
+<td>
+<p>(binary) Whether to include a confidence interval</p>
+</td></tr>
+<tr valign="top"><td><code>yLabel</code></td>
+<td>
+<p>(string) The label for the y-axis</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This creates a survival plot that can be used to pick a suitable time-at-risk period
+</p>
+
+
+<h3>Value</h3>
+
+<p>TRUE if it ran
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

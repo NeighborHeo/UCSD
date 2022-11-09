@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Run a list of predictions diagnoses</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for diagnoseMultiplePlp {PatientLevelPrediction}"><tr><td>diagnoseMultiplePlp {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Run a list of predictions diagnoses</h2>
+
+<h3>Description</h3>
+
+<p>Run a list of predictions diagnoses
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+diagnoseMultiplePlp(
+  databaseDetails = createDatabaseDetails(),
+  modelDesignList = list(createModelDesign(targetId = 1, outcomeId = 2, modelSettings =
+    setLassoLogisticRegression()), createModelDesign(targetId = 1, outcomeId = 3,
+    modelSettings = setLassoLogisticRegression())),
+  cohortDefinitions = NULL,
+  logSettings = createLogSettings(verbosity = "DEBUG", timeStamp = T, logName =
+    "diagnosePlp Log"),
+  saveDirectory = getwd()
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>databaseDetails</code></td>
+<td>
+<p>The database settings created using <code>createDatabaseDetails()</code></p>
+</td></tr>
+<tr valign="top"><td><code>modelDesignList</code></td>
+<td>
+<p>A list of model designs created using <code>createModelDesign()</code></p>
+</td></tr>
+<tr valign="top"><td><code>cohortDefinitions</code></td>
+<td>
+<p>A list of cohort definitions for the target and outcome cohorts</p>
+</td></tr>
+<tr valign="top"><td><code>logSettings</code></td>
+<td>
+<p>The setting spexcifying the logging for the analyses created using <code>createLogSettings()</code></p>
+</td></tr>
+<tr valign="top"><td><code>saveDirectory</code></td>
+<td>
+<p>Name of the folder where all the outputs will written to.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This function will run all specified prediction design diagnoses as defined using .
+</p>
+
+
+<h3>Value</h3>
+
+<p>A data frame with the following columns: </p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;"> <code style="white-space: pre;">analysisId</code> </td><td style="text-align: left;"> The unique identifier
+for a set of analysis choices.</td>
+</tr>
+<tr>
+ <td style="text-align: left;"> <code style="white-space: pre;">targetId</code> </td><td style="text-align: left;"> The ID of the target cohort populations.</td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+<code style="white-space: pre;">outcomeId</code> </td><td style="text-align: left;"> The ID of the outcomeId.</td>
+</tr>
+<tr>
+ <td style="text-align: left;"> <code style="white-space: pre;">dataLocation</code> </td><td style="text-align: left;"> The location where the plpData was saved 
+ </td>
+</tr>
+<tr>
+ <td style="text-align: left;"> <code style="white-space: pre;">the settings ids</code> </td><td style="text-align: left;"> The ids for all other settings used for model development.</td>
+</tr>
+<tr>
+ <td style="text-align: left;"> </td>
+</tr>
+
+</table>
+
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

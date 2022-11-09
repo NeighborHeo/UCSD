@@ -1,0 +1,19 @@
+PredDrugInducedLiverInjury
+                        PredDrugInducedLiverInjury
+createJournalDocument   Create the exposure and outcome cohorts
+createMultiPlpReport    createMultiPlpReport
+createPlpProtocol       Create a protocol template for the study
+execute                 Execute the Study
+getAgeCovariateData     Extracts age covariates
+getCohortCovariateData
+                        Extracts covariates based on cohorts
+getMeasurementCohortCovariateData
+                        Extracts covariates based on measurements and
+                        cohort
+getMeasurementCovariateData
+                        Extracts covariates based on measurements
+packageResults          Package the results for sharing with OHDSI
+                        researchers
+populateShinyApp        Adds the results of the study into a shiny app
+submitResults           Submit the study results to the study
+                        coordinating center

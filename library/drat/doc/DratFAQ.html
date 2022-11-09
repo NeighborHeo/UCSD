@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Dirk Eddelbuettel" />
+  <meta name="dcterms.date" content="2016-10-27" />
+  <title>Drat Frequently Asked Questions</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style type="text/css">
+body {
+max-width: 50rem;
+margin-left: auto;
+margin-right: auto;
+font-family: system-ui;
+}
+
+code {
+padding: 2px;
+border-radius: unset;
+}
+
+pre {
+background-color: unset;
+border: solid #aaa 1px;
+padding: 8px;
+}
+pre.numberSource {
+margin: 0;
+padding-left: 0;
+}
+div.sourceCode {
+overflow: visible;
+}
+pre, pre.sourceCode {
+overflow-x: auto;
+}
+pre>code {
+white-space: pre;
+overflow: visible;
+background-color: unset;
+padding: 0;
+}
+pre.sourceCode.numberSource {
+overflow-x: visible;
+}
+pre.sourceCode.numberSource>code {
+white-space: pre-wrap
+}
+pre.sourceCode.numberSource>code>span {
+left: 8px;
+text-indent: -4.6em;
+}
+
+.chunk-summary {
+text-align: right;
+}
+.chunk-summary+pre,
+.chunk-summary+div.sourceCode {
+margin-top: 2px;
+}
+
+nav > ul {
+border: .0625rem solid #444;
+border-radius: 4px;
+margin: 5px;
+padding: 5px;
+}
+nav ul {
+list-style-type: none;
+padding-inline-start: 1rem;
+}
+nav ul li {
+padding: 0;
+}
+nav ul ul {
+margin-top: 0;
+margin-bottom: 0;
+padding-top: 0;
+padding-bottom: 0;
+}
+nav code {
+background-color: unset;
+color: unset;
+}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Drat Frequently Asked Questions</h1>
+<p class="author">Dirk Eddelbuettel</p>
+<p class="date">2016-10-27</p>
+</header>
+<!--
+%\VignetteIndexEntry{Drat Frequently Asked Questions}
+%\VignetteEngine{simplermarkdown::mdweave_to_html}
+%\VignetteEncoding{UTF-8}
+-->
+<h2 id="what-is-drat">What is drat?</h2>
+<p>Good question. Drat is an R package which makes it really easy to provide R packages via a <em>repository</em>, and also makes it easy to use such repositories for package installation and upgrades.</p>
+<h2 id="why-use-drat">Why use drat?</h2>
+<p>The motivation for drat is to give package authors more control over how they make their packages available to users. It does this by enabling package authors to make releases on a GitHub repository (or any server, more on this below). drat allows anyone to create their own package repository – just like <a href="https://cran.r-project.org">CRAN</a>.</p>
+<p>There are two key advantages of using drat over other methods of installing packages from GitHub. First is that a package installed from a drat repository will be supported by <code>install.packages()</code> and <code>update.packages()</code>, so the user has easy methods for keeping up-to-date. A second advantage of using drat is that the package author can control what other people get when they download your package from GitHub. With other methods, users typically download a random install snapshot, which might have unexpected consequences for them.</p>
+<h2 id="where-is-drat">Where is drat?</h2>
+<p>drat itself is a package, so it has source code (on GitHub) and a package (on the main R repository network).</p>
+<p>But wait: we also call the repositories created or used via drat “drat” repositories. So we have to distinguish between “drat the package” and “a drat repository” created or used by it.</p>
+<p>Hope this clarified things a little. Drat really can be different things which reside in different places but it aims to be <em>a helper package which helps creating and using R package repositories easier</em>.</p>
+<h2 id="what-other-documentation-is-there">What other documentation is there?</h2>
+<p>Glad you asked. We have written</p>
+<ul>
+<li>a <a href="https://dirk.eddelbuettel.com/code/drat.html">package webpage</a> giving a first instroduction</li>
+<li>several <a href="https://dirk.eddelbuettel.com/blog/code/drat/">blog posts</a> on the package and its releases</li>
+<li>the <a href="https://github.com/eddelbuettel/drat">GitHub page README</a></li>
+<li>several <a href="https://cran.r-project.org/package=drat">vignettes accessible from the package page</a> and other places.</li>
+<li>the <a href="https://eddelbuettel.github.io/drat/">drat repo page</a></li>
+</ul>
+<h2 id="why-the-focus-on-github">Why the focus on GitHub?</h2>
+<p>Several answers:</p>
+<ul>
+<li>Because it is there and used by ever increasing numbers of package authors.</li>
+<li>Because it is pretty fast and reliable, no matter where in the world you are.</li>
+<li>Because it <em>already gives every repository owner a web-server</em> via either a gh-pages branch or a <code>docs/</code> directory.</li>
+<li>Because all we need is a web-server and some file system space</li>
+<li>Because the single variable <code>user</code> uniquely identifies a URL <code>user.github.io/drat/</code>, and communicating a single variable is easier than communicating a full URL</li>
+</ul>
+<p>Taken together, we have this a pretty good to <em>default on GitHub</em> for repositories. But read on …</p>
+<h2 id="what-if-not-github">What if not GitHub?</h2>
+<p>Fear not, as drat also supports repositories on a local drive, or shared network drive, or actually just about anything where you can write to or read from.</p>
+<p>We detail that in the corresponding vignettes.</p>
+<h2 id="why-could-install_github-be-wrong">Why could install_github be wrong?</h2>
+<p><code>install_github()</code> is a fine tool and does what it sets out to do: grab a snapshot from GitHub and install it. This can be the HEAD (by default), or a tag, or a commit, or from a branch.</p>
+<p>But we think that is not what R needs. R has become so very successful for many reasons, but (in the eyes of many) one key part of the success was <em>repositories</em> ensuring both <em>easy installation</em> and <em>easy upgrades</em>.</p>
+<p>That second point is lost on <code>install_github()</code>: it installs what we may call “orphans”. Packages that are disconnected from an upgrade path. (With the exception, of course, of a newer version of what you install appearing in a known repository so that <code>update.packages</code> will see it.) We think that is a disservice to the users, and a repository can do better in a fundamental way than provide access to (somewhat random) commits. Of course, one <em>could</em> write new code building on top of <code>install_github()</code> and adding the functionality. But then, why? R already has this functionality, and had it for decades: using repositories. So drat does not aim to replace <code>install_github()</code>; it simply aims at something both different and possibly much simpler.</p>
+<p>Moreover, drat puts the “release” option back into the hand of the <em>package authors</em>. By cutting a release tarball and placing it into a repository, we think a possibly more informed release snapshot is distributed than by pointing at any branch of repository.</p>
+<p>And last but not least, drat (&gt;= 0.0.4) and its repositories also support binary installations.</p>
+<h2 id="can-drat-work-with-binaries">Can drat work with binaries?</h2>
+<p>You bet. Jan Schulz provided a <a href="https://github.com/eddelbuettel/drat/pull/16">careful pull request</a> to provide initial support upon which we have built. As of release 0.1.0, this should just work for both Windows and OS X.</p>
+<h2 id="can-drat-act-as-an-additional_repositories">Can drat act as an <code>Additional_repositories</code> ?</h2>
+<p>Glad you asked! In fact, you can use <a href="https://github.com/search?q=Additional_repositories+drat&amp;type=Code&amp;utf8=%E2%9C%93">this GitHub query</a> to find several dozen of packages using <code>Additional_repositories</code> to point to drat repos (still having drat in their name; others may use domain nane such that the search may miss them). One example we used to point to here changed however. So for a more stable use case, one example from my packages: the <a href="https://cran.r-project.org/package=RcppRedis">RcppRedis package</a> points <a href="https://github.com/eddelbuettel/rcppredis/blob/e103ea1cb682ea164bf8a2ae022df64154466e58/DESCRIPTION#L21">via this line</a> to the <a href="https://ghrr.github.io/drat/">ghrr drat</a> to (optionally) use the <a href="https://github.com/eddelbuettel/rcppmsgpack">RcppMsgPack</a> package (which is not on CRAN as it uses a MsgPack release newer than what it in Debian).</p>
+<h2 id="what-about-the-minicran-package">What about the miniCRAN package?</h2>
+<p>The <a href="https://cran.r-project.org/package=miniCRAN">miniCRAN</a> package creates self-sufficient repositories by examining the dependency graph and downloading all dependent packages. As such, it is more of complement to drat than an alternative — and Word is that several people have in fact combined both.</p>
+<h2 id="is-there-a-suggested-commit-message-converntion">Is there a suggested commit message converntion?</h2>
+<p>The small helper script <code>getCommitMessageForDrat.sh</code> implements a simple format I have suggested in the past and used:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">edd@max:~/git/drat</span><span class="er">(</span><span class="ex">master</span><span class="kw">)</span><span class="ex">$</span> inst/scripts/getCommitMessageForDrat.sh </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drat</span> 0.1.0 94248ed git@github.com:eddelbuettel/drat.git</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">edd@max:~/git/drat</span><span class="er">(</span><span class="ex">master</span><span class="kw">)</span><span class="ex">$</span> </span></code></pre></div>
+<p>It combined four elements:</p>
+<ul>
+<li>the package name</li>
+<li>the current version</li>
+<li>the current git repository commit hash marker</li>
+<li>the repository URL.</li>
+</ul>
+<p>When both source and binary packages are uploaded, I often add <code>(src)</code> or <code>(win)</code> to indicate the type of package committed.</p>
+<p>This format has worked and could form the basis of a standard, but suggestions and refinements are certainly welcome.</p>
+</body>
+</html>

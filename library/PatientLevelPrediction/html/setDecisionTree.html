@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create setting for the scikit-learn 1.0.1 DecisionTree with...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for setDecisionTree {PatientLevelPrediction}"><tr><td>setDecisionTree {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create setting for the scikit-learn 1.0.1 DecisionTree with python</h2>
+
+<h3>Description</h3>
+
+<p>Create setting for the scikit-learn 1.0.1 DecisionTree with python
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+setDecisionTree(
+  criterion = list("gini"),
+  splitter = list("best"),
+  maxDepth = list(as.integer(4), as.integer(10), NULL),
+  minSamplesSplit = list(2, 10),
+  minSamplesLeaf = list(10, 50),
+  minWeightFractionLeaf = list(0),
+  maxFeatures = list(100, "sqrt", NULL),
+  maxLeafNodes = list(NULL),
+  minImpurityDecrease = list(10^-7),
+  classWeight = list(NULL, "balanced"),
+  seed = sample(1e+06, 1)
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>criterion</code></td>
+<td>
+<p>The function to measure the quality of a split. Supported criteria are “gini” for the Gini impurity and “entropy” for the information gain.</p>
+</td></tr>
+<tr valign="top"><td><code>splitter</code></td>
+<td>
+<p>The strategy used to choose the split at each node. Supported strategies are “best” to choose the best split and “random” to choose the best random split.</p>
+</td></tr>
+<tr valign="top"><td><code>maxDepth</code></td>
+<td>
+<p>(list) The maximum depth of the tree. If NULL, then nodes are expanded until all leaves are pure or until all leaves contain less than min_samples_split samples.</p>
+</td></tr>
+<tr valign="top"><td><code>minSamplesSplit</code></td>
+<td>
+<p>The minimum number of samples required to split an internal node</p>
+</td></tr>
+<tr valign="top"><td><code>minSamplesLeaf</code></td>
+<td>
+<p>The minimum number of samples required to be at a leaf node. A split point at any depth will only be considered if it leaves at least minSamplesLeaf training samples in each of the left and right branches. This may have the effect of smoothing the model, especially in regression.</p>
+</td></tr>
+<tr valign="top"><td><code>minWeightFractionLeaf</code></td>
+<td>
+<p>The minimum weighted fraction of the sum total of weights (of all the input samples) required to be at a leaf node. Samples have equal weight when sampleWeight is not provided.</p>
+</td></tr>
+<tr valign="top"><td><code>maxFeatures</code></td>
+<td>
+<p>(list) The number of features to consider when looking for the best split (int/'sqrt'/NULL)</p>
+</td></tr>
+<tr valign="top"><td><code>maxLeafNodes</code></td>
+<td>
+<p>(list) Grow a tree with max_leaf_nodes in best-first fashion. Best nodes are defined as relative reduction in impurity. If None then unlimited number of leaf nodes. (int/NULL)</p>
+</td></tr>
+<tr valign="top"><td><code>minImpurityDecrease</code></td>
+<td>
+<p>Threshold for early stopping in tree growth. A node will split if its impurity is above the threshold, otherwise it is a leaf.</p>
+</td></tr>
+<tr valign="top"><td><code>classWeight</code></td>
+<td>
+<p>(list) Weights associated with classes 'balance' or NULL</p>
+</td></tr>
+<tr valign="top"><td><code>seed</code></td>
+<td>
+<p>The random state seed</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+model.decisionTree &lt;- setDecisionTree(maxDepth=10,minSamplesLeaf=10, seed=NULL )
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

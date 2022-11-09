@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: createLearningCurve</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for createLearningCurve {PatientLevelPrediction}"><tr><td>createLearningCurve {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>createLearningCurve</h2>
+
+<h3>Description</h3>
+
+<p>Creates a learning curve object, which can be plotted using the
+<code>plotLearningCurve()</code> function.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+createLearningCurve(
+  plpData,
+  outcomeId,
+  parallel = T,
+  cores = 4,
+  modelSettings,
+  saveDirectory = getwd(),
+  analysisId = "learningCurve",
+  populationSettings = createStudyPopulationSettings(),
+  splitSettings = createDefaultSplitSetting(),
+  trainFractions = c(0.25, 0.5, 0.75),
+  trainEvents = NULL,
+  sampleSettings = createSampleSettings(),
+  featureEngineeringSettings = createFeatureEngineeringSettings(),
+  preprocessSettings = createPreprocessSettings(minFraction = 0.001, normalize = T),
+  logSettings = createLogSettings(),
+  executeSettings = createExecuteSettings(runSplitData = T, runSampleData = F,
+    runfeatureEngineering = F, runPreprocessData = T, runModelDevelopment = T,
+    runCovariateSummary = F)
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>plpData</code></td>
+<td>
+<p>An object of type <code>plpData</code> - the patient level prediction
+data extracted from the CDM.</p>
+</td></tr>
+<tr valign="top"><td><code>outcomeId</code></td>
+<td>
+<p>(integer) The ID of the outcome.</p>
+</td></tr>
+<tr valign="top"><td><code>parallel</code></td>
+<td>
+<p>Whether to run the code in parallel</p>
+</td></tr>
+<tr valign="top"><td><code>cores</code></td>
+<td>
+<p>The number of computer cores to use if running in parallel</p>
+</td></tr>
+<tr valign="top"><td><code>modelSettings</code></td>
+<td>
+<p>An object of class <code>modelSettings</code> created using one of the function:
+</p>
+
+<ul>
+<li><p>setLassoLogisticRegression() A lasso logistic regression model
+</p>
+</li>
+<li><p>setGradientBoostingMachine() A gradient boosting machine
+</p>
+</li>
+<li><p>setAdaBoost() An ada boost model
+</p>
+</li>
+<li><p>setRandomForest() A random forest model
+</p>
+</li>
+<li><p>setDecisionTree() A decision tree model
+</p>
+</li>
+<li><p>setCovNN()) A convolutional neural network model
+</p>
+</li>
+<li><p>setCIReNN() A recurrent neural network model
+</p>
+</li>
+<li><p>setMLP() A neural network model
+</p>
+</li>
+<li><p>setDeepNN() A deep neural network model
+</p>
+</li>
+<li><p>setKNN() A KNN model
+</p>
+</li></ul>
+</td></tr>
+<tr valign="top"><td><code>saveDirectory</code></td>
+<td>
+<p>The path to the directory where the results will be saved (if NULL uses working directory)</p>
+</td></tr>
+<tr valign="top"><td><code>analysisId</code></td>
+<td>
+<p>(integer) Identifier for the analysis. It is used to create, e.g., the result folder. Default is a timestamp.</p>
+</td></tr>
+<tr valign="top"><td><code>populationSettings</code></td>
+<td>
+<p>An object of type <code>populationSettings</code> created using <code>createStudyPopulationSettings</code> that
+specifies how the data class labels are defined and addition any exclusions to apply to the 
+plpData cohort</p>
+</td></tr>
+<tr valign="top"><td><code>splitSettings</code></td>
+<td>
+<p>An object of type <code>splitSettings</code> that specifies how to split the data into train/validation/test.
+The default settings can be created using <code>createDefaultSplitSetting</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>trainFractions</code></td>
+<td>
+<p>A list of training fractions to create models for.
+Note, providing <code>trainEvents</code> will override your input to
+<code>trainFractions</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>trainEvents</code></td>
+<td>
+<p>Events have shown to be determinant of model performance.
+Therefore, it is recommended to provide <code>trainEvents</code> rather than
+<code>trainFractions</code>. Note, providing <code>trainEvents</code> will override
+your input to <code>trainFractions</code>. The format should be as follows:
+</p>
+
+<ul>
+<li> <p><code>c(500, 1000, 1500) </code> - a list of training events
+</p>
+</li></ul>
+</td></tr>
+<tr valign="top"><td><code>sampleSettings</code></td>
+<td>
+<p>An object of type <code>sampleSettings</code> that specifies any under/over sampling to be done.
+The default is none.</p>
+</td></tr>
+<tr valign="top"><td><code>featureEngineeringSettings</code></td>
+<td>
+<p>An object of <code>featureEngineeringSettings</code> specifying any feature engineering to be learned (using the train data)</p>
+</td></tr>
+<tr valign="top"><td><code>preprocessSettings</code></td>
+<td>
+<p>An object of <code>preprocessSettings</code>. This setting specifies the minimum fraction of 
+target population who must have a covariate for it to be included in the model training                            
+and whether to normalise the covariates before training</p>
+</td></tr>
+<tr valign="top"><td><code>logSettings</code></td>
+<td>
+<p>An object of <code>logSettings</code> created using <code>createLogSettings</code> 
+specifying how the logging is done</p>
+</td></tr>
+<tr valign="top"><td><code>executeSettings</code></td>
+<td>
+<p>An object of <code>executeSettings</code> specifying which parts of the analysis to run</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A learning curve object containing the various performance measures
+obtained by the model for each training set fraction. It can be plotted
+using <code>plotLearningCurve</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+# define model
+modelSettings = PatientLevelPrediction::setLassoLogisticRegression()
+
+# create learning curve
+learningCurve &lt;- PatientLevelPrediction::createLearningCurve(population,
+                                                             plpData,
+                                                             modelSettings)
+# plot learning curve
+PatientLevelPrediction::plotLearningCurve(learningCurve)
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

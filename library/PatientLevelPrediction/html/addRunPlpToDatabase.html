@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Function to add the run plp (development or validation) to...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for addRunPlpToDatabase {PatientLevelPrediction}"><tr><td>addRunPlpToDatabase {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Function to add the run plp (development or validation) to database</h2>
+
+<h3>Description</h3>
+
+<p>This function adds a runPlp or external validation result into a database
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+addRunPlpToDatabase(
+  runPlp,
+  conn,
+  databaseSchemaSettings,
+  cohortDefinitions,
+  modelSaveLocation,
+  databaseList = NULL
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>runPlp</code></td>
+<td>
+<p>An object of class <code>runPlp</code> or class <code>externalValidatePlp</code></p>
+</td></tr>
+<tr valign="top"><td><code>conn</code></td>
+<td>
+<p>A connection to a database created by using the
+function <code>connect</code> in the
+<code>DatabaseConnector</code> package.</p>
+</td></tr>
+<tr valign="top"><td><code>databaseSchemaSettings</code></td>
+<td>
+<p>A object created by <code>createDatabaseSchemaSettings</code> with all the settings specifying the result tables</p>
+</td></tr>
+<tr valign="top"><td><code>cohortDefinitions</code></td>
+<td>
+<p>A set of one or more cohorts extracted using ROhdsiWebApi::exportCohortDefinitionSet()</p>
+</td></tr>
+<tr valign="top"><td><code>modelSaveLocation</code></td>
+<td>
+<p>The location of the directory that models will be saved to</p>
+</td></tr>
+<tr valign="top"><td><code>databaseList</code></td>
+<td>
+<p>(Optional) If you want to change the database name then used <code>createDatabaseList</code> to specify the database settings but use the same cdmDatabaseId was model development/validation</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This function is used when inserting results into the PatientLevelPrediction database results schema
+</p>
+
+
+<h3>Value</h3>
+
+<p>Returns a data.frame with the database details
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

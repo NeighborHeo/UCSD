@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: plotLearningCurve</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for plotLearningCurve {PatientLevelPrediction}"><tr><td>plotLearningCurve {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>plotLearningCurve</h2>
+
+<h3>Description</h3>
+
+<p>Create a plot of the learning curve using the object returned
+from <code>createLearningCurve</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plotLearningCurve(
+  learningCurve,
+  metric = "AUROC",
+  abscissa = "events",
+  plotTitle = "Learning Curve",
+  plotSubtitle = NULL,
+  fileName = NULL
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>learningCurve</code></td>
+<td>
+<p>An object returned by <code><a href="../../PatientLevelPrediction/help/createLearningCurve.html">createLearningCurve</a></code>
+function.</p>
+</td></tr>
+<tr valign="top"><td><code>metric</code></td>
+<td>
+<p>Specifies the metric to be plotted:
+</p>
+
+<ul>
+<li><p><code>'AUROC'</code> - use the area under the Receiver Operating
+Characteristic curve
+</p>
+</li>
+<li><p><code>'AUPRC'</code> - use the area under the Precision-Recall curve
+</p>
+</li>
+<li><p><code>'sBrier'</code> - use the scaled Brier score
+</p>
+</li></ul>
+</td></tr>
+<tr valign="top"><td><code>abscissa</code></td>
+<td>
+<p>Specify the abscissa metric to be plotted:
+</p>
+
+<ul>
+<li><p><code>'events'</code> - use number of events
+</p>
+</li>
+<li><p><code>'observations'</code> - use number of observations
+</p>
+</li></ul>
+</td></tr>
+<tr valign="top"><td><code>plotTitle</code></td>
+<td>
+<p>Title of the learning curve plot.</p>
+</td></tr>
+<tr valign="top"><td><code>plotSubtitle</code></td>
+<td>
+<p>Subtitle of the learning curve plot.</p>
+</td></tr>
+<tr valign="top"><td><code>fileName</code></td>
+<td>
+<p>Filename of plot to be saved, for example <code>'plot.png'</code>.
+See the function <code>ggsave</code> in the ggplot2 package for supported file 
+formats.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A ggplot object. Use the <code><a href="../../ggplot2/help/ggsave.html">ggsave</a></code> function to save to 
+file in a different format.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+# create learning curve object
+learningCurve &lt;- createLearningCurve(population,
+                                     plpData,
+                                     modelSettings)
+# plot the learning curve
+plotLearningCurve(learningCurve)
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

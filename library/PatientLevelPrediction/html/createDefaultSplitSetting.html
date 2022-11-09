@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create the settings for defining how the plpData are split...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for createDefaultSplitSetting {PatientLevelPrediction}"><tr><td>createDefaultSplitSetting {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create the settings for defining how the plpData are split into test/validation/train sets using 
+default splitting functions (either random stratified by outcome, time or subject splitting).</h2>
+
+<h3>Description</h3>
+
+<p>Create the settings for defining how the plpData are split into test/validation/train sets using 
+default splitting functions (either random stratified by outcome, time or subject splitting).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+createDefaultSplitSetting(
+  testFraction = 0.25,
+  trainFraction = 0.75,
+  splitSeed = sample(1e+05, 1),
+  nfold = 3,
+  type = "stratified"
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>testFraction</code></td>
+<td>
+<p>(numeric) A real number between 0 and 1 indicating the test set fraction of the data</p>
+</td></tr>
+<tr valign="top"><td><code>trainFraction</code></td>
+<td>
+<p>(numeric) A real number between 0 and 1 indicating the train set fraction of the data.
+If not set train is equal to 1 - test</p>
+</td></tr>
+<tr valign="top"><td><code>splitSeed</code></td>
+<td>
+<p>(numeric) A seed to use when splitting the data for reproducibility (if not set a random number will be generated)</p>
+</td></tr>
+<tr valign="top"><td><code>nfold</code></td>
+<td>
+<p>(numeric) An integer &gt; 1 specifying the number of folds used in cross validation</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>(character) Choice of:  </p>
+
+<ul>
+<li><p>'stratified' Each data point is randomly assigned into the test or a train fold set but this is done stratified such that the outcome rate is consistent in each partition 
+</p>
+</li>
+<li><p>'time') Older data are assigned into the training set and newer data are assigned into the test set
+</p>
+</li>
+<li><p>'subject' Data are partitioned by subject, if a subject is in the data more than once, all the data points for the subject are assigned either into the test data or into the train data (not both).
+</p>
+</li></ul>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Returns an object of class <code>splitSettings</code> that specifies the splitting function that will be called and the settings
+</p>
+
+
+<h3>Value</h3>
+
+<p>An object of class <code>splitSettings</code>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

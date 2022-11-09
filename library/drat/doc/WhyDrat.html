@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Steven Pav and Dirk Eddelbuettel" />
+  <meta name="dcterms.date" content="2015-03-27" />
+  <title>Why Drat?</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style type="text/css">
+body {
+max-width: 50rem;
+margin-left: auto;
+margin-right: auto;
+font-family: system-ui;
+}
+
+code {
+padding: 2px;
+border-radius: unset;
+}
+
+pre {
+background-color: unset;
+border: solid #aaa 1px;
+padding: 8px;
+}
+pre.numberSource {
+margin: 0;
+padding-left: 0;
+}
+div.sourceCode {
+overflow: visible;
+}
+pre, pre.sourceCode {
+overflow-x: auto;
+}
+pre>code {
+white-space: pre;
+overflow: visible;
+background-color: unset;
+padding: 0;
+}
+pre.sourceCode.numberSource {
+overflow-x: visible;
+}
+pre.sourceCode.numberSource>code {
+white-space: pre-wrap
+}
+pre.sourceCode.numberSource>code>span {
+left: 8px;
+text-indent: -4.6em;
+}
+
+.chunk-summary {
+text-align: right;
+}
+.chunk-summary+pre,
+.chunk-summary+div.sourceCode {
+margin-top: 2px;
+}
+
+nav > ul {
+border: .0625rem solid #444;
+border-radius: 4px;
+margin: 5px;
+padding: 5px;
+}
+nav ul {
+list-style-type: none;
+padding-inline-start: 1rem;
+}
+nav ul li {
+padding: 0;
+}
+nav ul ul {
+margin-top: 0;
+margin-bottom: 0;
+padding-top: 0;
+padding-bottom: 0;
+}
+nav code {
+background-color: unset;
+color: unset;
+}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Why Drat?</h1>
+<p class="author">Steven Pav and Dirk Eddelbuettel</p>
+<p class="date">2015-03-27</p>
+</header>
+<!--
+%\VignetteIndexEntry{Why Drat?}
+%\VignetteEngine{simplermarkdown::mdweave_to_html}
+%\VignetteEncoding{UTF-8}
+-->
+<blockquote>
+<p>Note: This was originally a <a href="https://dirk.eddelbuettel.com/blog/2015/03/13/">guest post</a> by Steven on Dirk’s blog.</p>
+</blockquote>
+<h3 id="why-drat">Why Drat?</h3>
+<p>After playing around with <a href="https://dirk.eddelbuettel.com/code/drat.html">drat</a> for a few days now, my impressions of it are best captured by Dirk’s quote:</p>
+<blockquote>
+<p>It just works.</p>
+</blockquote>
+<h4 id="demo">Demo</h4>
+<p>To get some idea of what I mean by this, suppose you are a happy consumer of R packages, but want access to, say, the latest, greatest releases of my distribution package, <a href="https://github.com/shabbychef/sadists">sadist</a>. You can simply add the following to your <code>.Rprofile</code> file:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>drat<span class="sc">:::</span><span class="fu">add</span>(<span class="st">&quot;shabbychef&quot;</span>)</span></code></pre></div>
+<p>After this, you instantly have access to new releases in the <a href="https://github.com/shabbychef/drat/tree/gh-pages">github/shabbychef drat store</a> via the package tools you already know and tolerate. You can use</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;sadists&#39;</span>)</span></code></pre></div>
+<p>to install the sadists package from the drat store, for example. Similarly, if you issue</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update.packages</span>(<span class="at">ask=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<p>all the drat stores you have added will be checked for package updates, along with their dependencies which may well come from other repositories including CRAN.</p>
+<h4 id="use-cases">Use cases</h4>
+<p>The most obvious use cases are:</p>
+<ol type="1">
+<li><p>Micro releases. For package authors, this provides a means to get feedback from the early adopters, but also allows one to push small changes and bug fixes without burning through your CRAN karma (if you have any left). My personal drat store tends to be a few minor releases ahead of my CRAN releases.</p></li>
+<li><p>Local repositories. In my professional life, I write and maintain proprietary packages. Pushing package updates used to involve saving the package .tar.gz to a NAS, then calling something like <code>R CMD INSTALL package_name_0.3.1.9001.tar.gz</code>. This is not something I wanted to ask of my colleagues. With drat, they can instead add the following stanza to .Rprofile: <code>drat:::addRepo(&#39;localRepo&#39;,&#39;file:///mnt/NAS/r/local/drat&#39;)</code>, and then rely on <code>update.packages</code> to do the rest.</p></li>
+</ol>
+<p>I suspect that in the future, <a href="https://dirk.eddelbuettel.com/code/drat.html">drat</a> might be (ab)used in the following ways:</p>
+<ol start="3" type="1">
+<li><p>Rolling your own vanilla CRAN mirror, though I suspect there are better existing ways to accomplish this.</p></li>
+<li><p>Patching CRAN. Suppose you found a bug in a package on CRAN (inconceivable!). As it stands now, you email the maintainer, and wait for a fix. Maybe the patch is trivial, but suppose it is never delivered. Now, you can simply make the patch yourself, pick a higher revision number, and stash it in your drat store. The only downside is that eventually the package maintainer might bump their revision number without pushing a fix, and you are stuck in an arms race of version numbers.</p></li>
+<li><p>Forgoing CRAN altogether. While some package maintainers might find this attractive, I think I would prefer a single huge repository, warts and all, to a landscape of a million microrepos. Perhaps some enterprising group will set up a CRAN-like drat store on github, and accept packages by pull request (whether github CDN can or will support the traffic that CRAN does is another matter), but this seems a bit too futuristic for me now.</p></li>
+</ol>
+<h4 id="my-wish-list">My wish list</h4>
+<p>In exchange for writing this blog post, I get to lobby Dirk for some features in drat:</p>
+<ol start="6" type="1">
+<li><p>I shudder at the thought of hundreds of tiny drat stores. Perhaps there should be a way to aggregate <code>addRepo</code> commands in some way. This would allow curators to publish their suggested lists of repos.</p></li>
+<li><p>Drat stores are served in the <code>gh-pages</code> branch of a github repo. I wish there were some way to keep the index.html file in that directory reflect the packages present in the sources. Maybe this could be achieved with some canonical RMarkdown code that most people use.</p></li>
+</ol>
+</body>
+</html>

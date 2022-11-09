@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Extracts covariates based on cohorts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for getCohortCovariateData {PatientLevelPrediction}"><tr><td>getCohortCovariateData {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Extracts covariates based on cohorts</h2>
+
+<h3>Description</h3>
+
+<p>Extracts covariates based on cohorts
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+getCohortCovariateData(
+  connection,
+  oracleTempSchema = NULL,
+  cdmDatabaseSchema,
+  cdmVersion = "5",
+  cohortTable = "#cohort_person",
+  rowIdField = "row_id",
+  aggregated,
+  cohortId,
+  covariateSettings
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>connection</code></td>
+<td>
+<p>The database connection</p>
+</td></tr>
+<tr valign="top"><td><code>oracleTempSchema</code></td>
+<td>
+<p>The temp schema if using oracle</p>
+</td></tr>
+<tr valign="top"><td><code>cdmDatabaseSchema</code></td>
+<td>
+<p>The schema of the OMOP CDM data</p>
+</td></tr>
+<tr valign="top"><td><code>cdmVersion</code></td>
+<td>
+<p>version of the OMOP CDM data</p>
+</td></tr>
+<tr valign="top"><td><code>cohortTable</code></td>
+<td>
+<p>the table name that contains the target population cohort</p>
+</td></tr>
+<tr valign="top"><td><code>rowIdField</code></td>
+<td>
+<p>string representing the unique identifier in the target population cohort</p>
+</td></tr>
+<tr valign="top"><td><code>aggregated</code></td>
+<td>
+<p>whether the covariate should be aggregated</p>
+</td></tr>
+<tr valign="top"><td><code>cohortId</code></td>
+<td>
+<p>cohort id for the target cohort</p>
+</td></tr>
+<tr valign="top"><td><code>covariateSettings</code></td>
+<td>
+<p>settings for the covariate cohorts and time periods</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The user specifies a cohort and time period and then a covariate is constructed whether they are in the
+cohort during the time periods relative to target population cohort index
+</p>
+
+
+<h3>Value</h3>
+
+<p>The models will now be in the package
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

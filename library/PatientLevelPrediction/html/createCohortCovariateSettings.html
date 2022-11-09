@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Extracts covariates based on cohorts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for createCohortCovariateSettings {PatientLevelPrediction}"><tr><td>createCohortCovariateSettings {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Extracts covariates based on cohorts</h2>
+
+<h3>Description</h3>
+
+<p>Extracts covariates based on cohorts
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+createCohortCovariateSettings(
+  cohortName,
+  settingId,
+  cohortDatabaseSchema,
+  cohortTable,
+  cohortId,
+  startDay = -30,
+  endDay = 0,
+  count = F,
+  ageInteraction = F,
+  lnAgeInteraction = F,
+  analysisId = 456
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>cohortName</code></td>
+<td>
+<p>Name for the cohort</p>
+</td></tr>
+<tr valign="top"><td><code>settingId</code></td>
+<td>
+<p>A unique id for the covariate time and</p>
+</td></tr>
+<tr valign="top"><td><code>cohortDatabaseSchema</code></td>
+<td>
+<p>The schema of the database with the cohort</p>
+</td></tr>
+<tr valign="top"><td><code>cohortTable</code></td>
+<td>
+<p>the table name that contains the covariate cohort</p>
+</td></tr>
+<tr valign="top"><td><code>cohortId</code></td>
+<td>
+<p>cohort id for the covariate cohort</p>
+</td></tr>
+<tr valign="top"><td><code>startDay</code></td>
+<td>
+<p>The number of days prior to index to start observing the cohort</p>
+</td></tr>
+<tr valign="top"><td><code>endDay</code></td>
+<td>
+<p>The number of days prior to index to stop observing the cohort</p>
+</td></tr>
+<tr valign="top"><td><code>count</code></td>
+<td>
+<p>If FALSE the covariate value is binary (1 means cohort occurred between index+startDay and index+endDay, 0 means it did not)
+If TRUE then the covariate value is the number of unique cohort_start_dates between index+startDay and index+endDay</p>
+</td></tr>
+<tr valign="top"><td><code>ageInteraction</code></td>
+<td>
+<p>If TRUE multiple covariate value by the patient's age in years</p>
+</td></tr>
+<tr valign="top"><td><code>lnAgeInteraction</code></td>
+<td>
+<p>If TRUE multiple covariate value by the log of the patient's age in years</p>
+</td></tr>
+<tr valign="top"><td><code>analysisId</code></td>
+<td>
+<p>The analysisId for the covariate</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The user specifies a cohort and time period and then a covariate is constructed whether they are in the
+cohort during the time periods relative to target population cohort index
+</p>
+
+
+<h3>Value</h3>
+
+<p>An object of class covariateSettings specifying how to create the cohort covariate with the covariateId
+cohortId x 100000 + settingId x 1000 + analysisId
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

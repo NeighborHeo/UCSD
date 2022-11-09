@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: covariateSummary</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for covariateSummary {PatientLevelPrediction}"><tr><td>covariateSummary {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>covariateSummary</h2>
+
+<h3>Description</h3>
+
+<p>Summarises the covariateData to calculate the mean and standard deviation per covaraite
+if the labels are input it also stratifies this by class label and if the trainRowIds and testRowIds
+specifying the patients in the train/test sets respectively are input, these values are also stratified
+by train and test set
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+covariateSummary(
+  covariateData,
+  cohort,
+  labels = NULL,
+  strata = NULL,
+  variableImportance = NULL,
+  featureEngineering = NULL
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>covariateData</code></td>
+<td>
+<p>The covariateData part of the plpData that is 
+extracted using <code>getPlpData</code></p>
+</td></tr>
+<tr valign="top"><td><code>cohort</code></td>
+<td>
+<p>The patient cohort to calculate the summary</p>
+</td></tr>
+<tr valign="top"><td><code>labels</code></td>
+<td>
+<p>A data.frame with the columns rowId and outcomeCount</p>
+</td></tr>
+<tr valign="top"><td><code>strata</code></td>
+<td>
+<p>A data.frame containing the columns rowId, strataName</p>
+</td></tr>
+<tr valign="top"><td><code>variableImportance</code></td>
+<td>
+<p>A data.frame with the columns covariateId and 
+value (the variable importance value)</p>
+</td></tr>
+<tr valign="top"><td><code>featureEngineering</code></td>
+<td>
+<p>(currently not used )
+A function or list of functions specifying any feature engineering
+to create covariates before summarising</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The function calculates various metrics to measure the performance of the model
+</p>
+
+
+<h3>Value</h3>
+
+<p>A data.frame containing: CovariateCount	CovariateMean and CovariateStDev plus these values
+for any specified stratification
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

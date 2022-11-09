@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create setting for lasso logistic regression</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for setIterativeHardThresholding {PatientLevelPrediction}"><tr><td>setIterativeHardThresholding {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create setting for lasso logistic regression</h2>
+
+<h3>Description</h3>
+
+<p>Create setting for lasso logistic regression
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+setIterativeHardThresholding(
+  K = 10,
+  penalty = "bic",
+  seed = sample(1e+05, 1),
+  exclude = c(),
+  forceIntercept = F,
+  fitBestSubset = FALSE,
+  initialRidgeVariance = 10000,
+  tolerance = 1e-08,
+  maxIterations = 10000,
+  threshold = 1e-06,
+  delta = 0
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>K</code></td>
+<td>
+<p>The maximum number of non-zero predictors</p>
+</td></tr>
+<tr valign="top"><td><code>penalty</code></td>
+<td>
+<p>Specifies the IHT penalty; possible values are 'BIC' or 'AIC' or a numeric value</p>
+</td></tr>
+<tr valign="top"><td><code>seed</code></td>
+<td>
+<p>An option to add a seed when training the model</p>
+</td></tr>
+<tr valign="top"><td><code>exclude</code></td>
+<td>
+<p>A vector of numbers or covariateId names to exclude from prior</p>
+</td></tr>
+<tr valign="top"><td><code>forceIntercept</code></td>
+<td>
+<p>Logical: Force intercept coefficient into regularization</p>
+</td></tr>
+<tr valign="top"><td><code>fitBestSubset</code></td>
+<td>
+<p>Logical: Fit final subset with no regularization</p>
+</td></tr>
+<tr valign="top"><td><code>initialRidgeVariance</code></td>
+<td>
+<p>integer</p>
+</td></tr>
+<tr valign="top"><td><code>tolerance</code></td>
+<td>
+<p>numeric</p>
+</td></tr>
+<tr valign="top"><td><code>maxIterations</code></td>
+<td>
+<p>integer</p>
+</td></tr>
+<tr valign="top"><td><code>threshold</code></td>
+<td>
+<p>numeric</p>
+</td></tr>
+<tr valign="top"><td><code>delta</code></td>
+<td>
+<p>numeric</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+model.lr &lt;- setLassoLogisticRegression()
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

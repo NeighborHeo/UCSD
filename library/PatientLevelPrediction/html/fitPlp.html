@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: fitPlp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for fitPlp {PatientLevelPrediction}"><tr><td>fitPlp {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>fitPlp</h2>
+
+<h3>Description</h3>
+
+<p>Train various models using a default parameter gird search or user specified parameters
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+fitPlp(trainData, modelSettings, search = "grid", analysisId)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>trainData</code></td>
+<td>
+<p>An object of type <code>TrainData</code> created using <code>splitData</code>
+data extracted from the CDM.</p>
+</td></tr>
+<tr valign="top"><td><code>modelSettings</code></td>
+<td>
+<p>An object of class <code>modelSettings</code> created using one of the function:
+</p>
+
+<ul>
+<li><p>logisticRegressionModel() A lasso logistic regression model
+</p>
+</li>
+<li><p>GBMclassifier() A gradient boosting machine
+</p>
+</li>
+<li><p>RFclassifier() A random forest model
+</p>
+</li>
+<li><p>GLMclassifier () A generalised linear model
+</p>
+</li>
+<li><p>KNNclassifier() A KNN model
+</p>
+</li></ul>
+</td></tr>
+<tr valign="top"><td><code>search</code></td>
+<td>
+<p>The search strategy for the hyper-parameter selection (currently not used)</p>
+</td></tr>
+<tr valign="top"><td><code>analysisId</code></td>
+<td>
+<p>The id of the analysis</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The user can define the machine learning model to train (regularised logistic regression, random forest,
+gradient boosting machine, neural network and )
+</p>
+
+
+<h3>Value</h3>
+
+<p>An object of class <code>plpModel</code> containing:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>The trained prediction model</p>
+</td></tr>
+<tr valign="top"><td><code>preprocessing</code></td>
+<td>
+<p>The preprocessing required when applying the model</p>
+</td></tr>
+<tr valign="top"><td><code>prediction</code></td>
+<td>
+<p>The cohort data.frame with the predicted risk column added</p>
+</td></tr>
+<tr valign="top"><td><code>modelDesign</code></td>
+<td>
+<p>A list specifiying the modelDesign settings used to fit the model</p>
+</td></tr>
+<tr valign="top"><td><code>trainDetails</code></td>
+<td>
+<p>The model meta data</p>
+</td></tr>
+<tr valign="top"><td><code>covariateImportance</code></td>
+<td>
+<p>The covariate importance for the model</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

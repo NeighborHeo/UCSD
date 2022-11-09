@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Introduction</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<!--
+%\VignetteEngine{knitr}
+%\VignetteIndexEntry{Making  patient-level predictive network study packages}
+-->
+
+<p>\newpage</p>
+
+<h1>Introduction</h1>
+
+<p>The OHDSI Patient Level Prediction (PLP) package provides the framework to implement prediction models at scale.  This can range from developing a large number of models across sites (methodology and study design insight) to extensive external validation of existing models in the OHDSI PLP framework (model insight). This vignette describes how you can use the <code>PatientLevelPrediction</code> package to  create a network study package.</p>
+
+<h1>Useful publication</h1>
+
+<p>The open access publication <a href="https://pubmed.ncbi.nlm.nih.gov/34560604/">A standardized analytics pipeline for reliable and rapid development and validation of prediction models using observational health data</a> details the process used to develop and validate prediction models using the OHDSI prediction framework and tools.  This publication describes each of the steps and then demonstrates these by focusing on predicting death in those who have covid-19.</p>
+
+<h1>Main steps for running a network study</h1>
+
+<h2>Step 1 – developing the study</h2>
+
+<ul>
+<li> Design the study: target/outcome cohort logic, concept sets for medical definitions, settings for developing new model or validation of adding existing models to framework.  Suggestion: look in literature for validated definitions.</li>
+<li> Write a protocol that motivates the study and provides full details (sufficient for people to replicate the study in the future).</li>
+<li> Write an R package for implementing the study across diverse computational environments [see guidance below for structure of package and use the skeleton github package here: <a href="https://github.com/OHDSI/SkeletonPredictionStudy">https://github.com/OHDSI/SkeletonPredictionStudy</a> ]</li>
+</ul>
+
+<h2>Step 2 – implementing the study part 1</h2>
+
+<ul>
+<li> Get contributors to install the package and dependencies.  Ensure the package is installed correctly for each contributor by asking them to run the checkInstall functions (as specified in the InstallationGuide).</li>
+<li> Get contributors to run the createCohort function to inspect the target/outcome definitions.  If the definitions are not suitable for a site, go back to step 1 and revise the cohort definitions.<br/></li>
+</ul>
+
+<h2>Step 3 – implementing the study part 2 (make sure the package is functioning as planned and the definitions are valid across sites)</h2>
+
+<ul>
+<li> Get contributors to run the main.R with the settings configured to their environment</li>
+<li> Get the contributors to submit the results</li>
+</ul>
+
+<h2>Step 4 – Publication</h2>
+
+<p>The study creator has the first option to be first author, if he/she does not wish to be first author then he/she can pick the most suitable person from the contributors.  All contributors will be listed as authors on the paper.  The last author will be the person who lead/managed the study, if this was the first author then the first author can pick the most suitable last author.  All authors between the first and last author will be alphabetical by last name.</p>
+
+<h1>Package Skeleton - File Structure</h1>
+
+<ul>
+<li> DESCRIPTION: This file describes the R package and the dependencies</li>
+<li> NAMESPACE: This file is created automatically by Roxygen</li>
+<li> Readme.md: This file should provide the step by step guidance on implementing the package</li>
+<li> R 
+
+<ul>
+<li>   helpers.r: all the custom functions used by the package should be in this file (e.g., checkInstall)</li>
+<li>   main.r: this file will call the functions in helpers.r to execute the full study</li>
+<li>submit.r: this file will be called at the end to submit the compressed folder to the study creator/manager.</li>
+</ul></li>
+<li> Man: this folder will contain the documentation for the functions in helpers.r (this should be automatically generated by roxygen)</li>
+<li> Inst
+
+<ul>
+<li>   sql/sql_sever
+
+<ul>
+<li>targetCohort: the target cohort parameterised sql code</li>
+<li>outcomeCohort: the outcome cohort parameterised sql code</li>
+</ul></li>
+<li>plp_models: place any PLP models here</li>
+</ul></li>
+<li>Extras </li>
+</ul>
+
+</body>
+
+</html>

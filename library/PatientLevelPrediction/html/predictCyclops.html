@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create predictive probabilities</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for predictCyclops {PatientLevelPrediction}"><tr><td>predictCyclops {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create predictive probabilities</h2>
+
+<h3>Description</h3>
+
+<p>Create predictive probabilities
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+predictCyclops(plpModel, data, cohort)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>plpModel</code></td>
+<td>
+<p>An object of type <code>predictiveModel</code> as generated using
+<code><a href="../../PatientLevelPrediction/help/fitPlp.html">fitPlp</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>The new plpData containing the covariateData for the new population</p>
+</td></tr>
+<tr valign="top"><td><code>cohort</code></td>
+<td>
+<p>The cohort to calculate the prediction for</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Generates predictions for the population specified in plpData given the model.
+</p>
+
+
+<h3>Value</h3>
+
+<p>The value column in the result data.frame is: logistic: probabilities of the outcome, poisson:
+Poisson rate (per day) of the outome, survival: hazard rate (per day) of the outcome.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

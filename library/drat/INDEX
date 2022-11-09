@@ -1,0 +1,10 @@
+addRepo                 Add a (drat) repository to the current session
+archivePackages         Move older copies of packages to an archive
+drat-package            Easy-to-use package repository creation and
+                        access
+getPackageInfo          Get information from a binary package
+identifyPackageType     Identifies the package type from a filename
+initRepo                Intialize a git repo for drat
+insertPackage           Insert a package source or binary file into a
+                        drat repository
+pruneRepo               Prune repository from older copies of packages

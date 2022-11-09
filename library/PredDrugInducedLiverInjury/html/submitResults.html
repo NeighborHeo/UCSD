@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Submit the study results to the study coordinating center</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for submitResults {PredDrugInducedLiverInjury}"><tr><td>submitResults {PredDrugInducedLiverInjury}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Submit the study results to the study coordinating center</h2>
+
+<h3>Description</h3>
+
+<p>Submit the study results to the study coordinating center
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+submitResults(outputFolder, privateKeyFileName, userName, remoteFolder = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>outputFolder</code></td>
+<td>
+<p>Name of local folder where the results were generated; make sure to use forward slashes
+(/). Do not use a folder on a network drive since this greatly impacts
+performance.</p>
+</td></tr>
+<tr valign="top"><td><code>privateKeyFileName</code></td>
+<td>
+<p>A character string denoting the path to an RSA private key.</p>
+</td></tr>
+<tr valign="top"><td><code>userName</code></td>
+<td>
+<p>A character string containing the user name.</p>
+</td></tr>
+<tr valign="top"><td><code>remoteFolder</code></td>
+<td>
+<p>The remote folder to upload the file to (default is 'patientLevelPrediction').</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This will upload the file <code>StudyResults.zip</code> to the OHDSI SFTP server
+This requires an active internet connection.
+</p>
+
+
+<h3>Value</h3>
+
+<p>TRUE if the upload was successful.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PredDrugInducedLiverInjury</em> version 1.0.6 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

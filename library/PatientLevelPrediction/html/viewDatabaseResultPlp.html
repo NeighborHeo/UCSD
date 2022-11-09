@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: open a local shiny app for viewing the result of a PLP...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for viewDatabaseResultPlp {PatientLevelPrediction}"><tr><td>viewDatabaseResultPlp {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>open a local shiny app for viewing the result of a PLP analyses from a database</h2>
+
+<h3>Description</h3>
+
+<p>open a local shiny app for viewing the result of a PLP analyses from a database
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+viewDatabaseResultPlp(
+  mySchema,
+  myServer,
+  myUser,
+  myPassword,
+  myDbms,
+  myPort = NULL,
+  myTableAppend
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>mySchema</code></td>
+<td>
+<p>Database result schema containing the result tables</p>
+</td></tr>
+<tr valign="top"><td><code>myServer</code></td>
+<td>
+<p>server with the result database</p>
+</td></tr>
+<tr valign="top"><td><code>myUser</code></td>
+<td>
+<p>Username for the connection to the result database</p>
+</td></tr>
+<tr valign="top"><td><code>myPassword</code></td>
+<td>
+<p>Password for the connection to the result database</p>
+</td></tr>
+<tr valign="top"><td><code>myDbms</code></td>
+<td>
+<p>database management system for the result database</p>
+</td></tr>
+<tr valign="top"><td><code>myPort</code></td>
+<td>
+<p>Port for the connection to the result database</p>
+</td></tr>
+<tr valign="top"><td><code>myTableAppend</code></td>
+<td>
+<p>A string appended to the results tables (optional)</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Opens a shiny app for viewing the results of the models from a database
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create the PatientLevelPrediction database result schema...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for createDatabaseSchemaSettings {PatientLevelPrediction}"><tr><td>createDatabaseSchemaSettings {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create the PatientLevelPrediction database result schema settings</h2>
+
+<h3>Description</h3>
+
+<p>This function specifies where the results schema is and lets you pick a different schema for the cohorts and databases
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+createDatabaseSchemaSettings(
+  resultSchema = "main",
+  tablePrefix = "",
+  targetDialect = "sqlite",
+  tempEmulationSchema = getOption("sqlRenderTempEmulationSchema"),
+  cohortDefinitionSchema = resultSchema,
+  tablePrefixCohortDefinitionTables = tablePrefix,
+  databaseDefinitionSchema = resultSchema,
+  tablePrefixDatabaseDefinitionTables = tablePrefix
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>resultSchema</code></td>
+<td>
+<p>(string) The name of the database schema with the result tables.</p>
+</td></tr>
+<tr valign="top"><td><code>tablePrefix</code></td>
+<td>
+<p>(string) A string that appends to the PatientLevelPrediction result tables</p>
+</td></tr>
+<tr valign="top"><td><code>targetDialect</code></td>
+<td>
+<p>(string) The database management system being used</p>
+</td></tr>
+<tr valign="top"><td><code>tempEmulationSchema</code></td>
+<td>
+<p>(string) The temp schema used when the database management system is oracle</p>
+</td></tr>
+<tr valign="top"><td><code>cohortDefinitionSchema</code></td>
+<td>
+<p>(string) The name of the database schema with the cohort definition tables (defaults to resultSchema).</p>
+</td></tr>
+<tr valign="top"><td><code>tablePrefixCohortDefinitionTables</code></td>
+<td>
+<p>(string) A string that appends to the cohort definition tables</p>
+</td></tr>
+<tr valign="top"><td><code>databaseDefinitionSchema</code></td>
+<td>
+<p>(string) The name of the database schema with the database definition tables (defaults to resultSchema).</p>
+</td></tr>
+<tr valign="top"><td><code>tablePrefixDatabaseDefinitionTables</code></td>
+<td>
+<p>(string) A string that appends to the database definition tables</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This function can be used to specify the database settings used to upload PatientLevelPrediction results into a database
+</p>
+
+
+<h3>Value</h3>
+
+<p>Returns a list of class 'plpDatabaseResultSchema' with all the database settings
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

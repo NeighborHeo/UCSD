@@ -1,0 +1,693 @@
+{
+  "targetIds": [1778587, 1778588, 1778589, 1778590, 1778591, 1778592, 1778593, 1778594, 1778595, 1778596, 1778597, 1778598, 1778599, 1778600, 1778601, 1778602, 1778603, 1778604, 1778605, 1778606, 1778607, 1778608, 1778609, 1778610, 1778611, 1778612, 1778613, 1778614, 1778615, 1778616, 1778617, 1778618, 1778619, 1778620, 1778621, 1778622, 1778623, 1778624, 1778625, 1778626, 1778627, 1778628, 1778629, 1778630, 1778631, 1778632, 1778633, 1778634, 1778635, 1778636, 1778637, 1778638, 1778639, 1778640, 1778641, 1778642, 1778643, 1778644, 1778645, 1778646, 1778647, 1778648, 1778649, 1778650, 1778651, 1778652, 1778653, 1778654, 1778655, 1778656, 1778657, 1778658, 1778659, 1778660, 1778661, 1778662, 1778663, 1778664, 1778665, 1778666, 1778667, 1778668, 1778669, 1778670, 1778671, 1778672, 1778673, 1778674, 1778675, 1778676, 1778677, 1778678, 1778679, 1778680, 1778681, 1778682, 1778683, 1778684, 1778685, 1778686, 1778687, 1778688, 1778689, 1778690, 1778691, 1778692, 1778693, 1778694, 1778695, 1778696, 1778697, 1778698, 1778699, 1778700, 1778701, 1778702, 1778703, 1778704, 1778705, 1778706, 1778707, 1778708, 1778709, 1778710, 1778711, 1778712, 1778713],
+  "outcomeIds": 1778584,
+  "cohortDefinitions": [
+    {
+      "id": "1778584",
+      "name": "MOAAbnormal_LFT"
+    },
+    {
+      "id": "1778587",
+      "name": "MOAnormal_LFT_acetaminophen"
+    },
+    {
+      "id": "1778588",
+      "name": "MOAnormal_LFT_chlorpheniramine"
+    },
+    {
+      "id": "1778589",
+      "name": "MOAnormal_LFT_hydroxyzine"
+    },
+    {
+      "id": "1778590",
+      "name": "MOAnormal_LFT_benztropine(oral)"
+    },
+    {
+      "id": "1778591",
+      "name": "MOAnormal_LFT_trihexyphenidyl"
+    },
+    {
+      "id": "1778592",
+      "name": "MOAnormal_LFT_hyoscyamine"
+    },
+    {
+      "id": "1778593",
+      "name": "MOAnormal_LFT_scopolamine"
+    },
+    {
+      "id": "1778594",
+      "name": "MOAnormal_LFT_ticlopidine"
+    },
+    {
+      "id": "1778595",
+      "name": "MOAnormal_LFT_doxazosin"
+    },
+    {
+      "id": "1778596",
+      "name": "MOAnormal_LFT_terazosin"
+    },
+    {
+      "id": "1778597",
+      "name": "MOAnormal_LFT_dronedarone"
+    },
+    {
+      "id": "1778598",
+      "name": "MOAnormal_LFT_nifedipine"
+    },
+    {
+      "id": "1778599",
+      "name": "MOAnormal_LFT_amitriptyline"
+    },
+    {
+      "id": "1778600",
+      "name": "MOAnormal_LFT_doxepin"
+    },
+    {
+      "id": "1778601",
+      "name": "MOAnormal_LFT_imipramine"
+    },
+    {
+      "id": "1778602",
+      "name": "MOAnormal_LFT_nortriptyline"
+    },
+    {
+      "id": "1778603",
+      "name": "MOAnormal_LFT_paroxetine"
+    },
+    {
+      "id": "1778604",
+      "name": "MOAnormal_LFT_chlorpromazine"
+    },
+    {
+      "id": "1778605",
+      "name": "MOAnormal_LFT_haloperidol"
+    },
+    {
+      "id": "1778606",
+      "name": "MOAnormal_LFT_pimozide"
+    },
+    {
+      "id": "1778607",
+      "name": "MOAnormal_LFT_amisulpride"
+    },
+    {
+      "id": "1778608",
+      "name": "MOAnormal_LFT_aripiprazole"
+    },
+    {
+      "id": "1778609",
+      "name": "MOAnormal_LFT_clozapine"
+    },
+    {
+      "id": "1778610",
+      "name": "MOAnormal_LFT_olanzapine"
+    },
+    {
+      "id": "1778611",
+      "name": "MOAnormal_LFT_paliperidone"
+    },
+    {
+      "id": "1778612",
+      "name": "MOAnormal_LFT_quetiapine"
+    },
+    {
+      "id": "1778613",
+      "name": "MOAnormal_LFT_risperidone"
+    },
+    {
+      "id": "1778614",
+      "name": "MOAnormal_LFT_ziprasidone"
+    },
+    {
+      "id": "1778615",
+      "name": "MOAnormal_LFT_phenobarbital"
+    },
+    {
+      "id": "1778616",
+      "name": "MOAnormal_LFT_lorazepam"
+    },
+    {
+      "id": "1778617",
+      "name": "MOAnormal_LFT_triazolam"
+    },
+    {
+      "id": "1778618",
+      "name": "MOAnormal_LFT_chlordiazepoxide"
+    },
+    {
+      "id": "1778619",
+      "name": "MOAnormal_LFT_clonazepam"
+    },
+    {
+      "id": "1778620",
+      "name": "MOAnormal_LFT_diazepam"
+    },
+    {
+      "id": "1778621",
+      "name": "MOAnormal_LFT_flurazepam"
+    },
+    {
+      "id": "1778622",
+      "name": "MOAnormal_LFT_zolpidem"
+    },
+    {
+      "id": "1778623",
+      "name": "MOAnormal_LFT_megestrol"
+    },
+    {
+      "id": "1778624",
+      "name": "MOAnormal_LFT_metoclopramide"
+    },
+    {
+      "id": "1778625",
+      "name": "MOAnormal_LFT_aspirin"
+    },
+    {
+      "id": "1778626",
+      "name": "MOAnormal_LFT_ibuprofen"
+    },
+    {
+      "id": "1778627",
+      "name": "MOAnormal_LFT_ketoprofen"
+    },
+    {
+      "id": "1778628",
+      "name": "MOAnormal_LFT_mefenamic acid"
+    },
+    {
+      "id": "1778629",
+      "name": "MOAnormal_LFT_meloxicam"
+    },
+    {
+      "id": "1778630",
+      "name": "MOAnormal_LFT_nabumetone"
+    },
+    {
+      "id": "1778631",
+      "name": "MOAnormal_LFT_naproxen"
+    },
+    {
+      "id": "1778632",
+      "name": "MOAnormal_LFT_piroxicam"
+    },
+    {
+      "id": "1778633",
+      "name": "MOAnormal_LFT_ketorolac"
+    },
+    {
+      "id": "1778634",
+      "name": "MOAnormal_LFT_aceclofenac"
+    },
+    {
+      "id": "1778635",
+      "name": "MOAnormal_LFT_alprazolam"
+    },
+    {
+      "id": "1778636",
+      "name": "MOAnormal_LFT_amiodarone"
+    },
+    {
+      "id": "1778637",
+      "name": "MOAnormal_LFT_amlodipine"
+    },
+    {
+      "id": "1778638",
+      "name": "MOAnormal_LFT_amphotericin"
+    },
+    {
+      "id": "1778639",
+      "name": "MOAnormal_LFT_aprepitant"
+    },
+    {
+      "id": "1778640",
+      "name": "MOAnormal_LFT_atenolol"
+    },
+    {
+      "id": "1778641",
+      "name": "MOAnormal_LFT_atropine"
+    },
+    {
+      "id": "1778642",
+      "name": "MOAnormal_LFT_bisacodyl"
+    },
+    {
+      "id": "1778643",
+      "name": "MOAnormal_LFT_bisoprolol"
+    },
+    {
+      "id": "1778644",
+      "name": "MOAnormal_LFT_budesonide"
+    },
+    {
+      "id": "1778645",
+      "name": "MOAnormal_LFT_bupropion"
+    },
+    {
+      "id": "1778646",
+      "name": "MOAnormal_LFT_capsaicin"
+    },
+    {
+      "id": "1778647",
+      "name": "MOAnormal_LFT_carvedilol"
+    },
+    {
+      "id": "1778648",
+      "name": "MOAnormal_LFT_cimetidine"
+    },
+    {
+      "id": "1778649",
+      "name": "MOAnormal_LFT_ciprofloxacin"
+    },
+    {
+      "id": "1778650",
+      "name": "MOAnormal_LFT_citalopram"
+    },
+    {
+      "id": "1778651",
+      "name": "MOAnormal_LFT_clopidogrel"
+    },
+    {
+      "id": "1778652",
+      "name": "MOAnormal_LFT_diclofenac"
+    },
+    {
+      "id": "1778653",
+      "name": "MOAnormal_LFT_digoxin"
+    },
+    {
+      "id": "1778654",
+      "name": "MOAnormal_LFT_diltiazem"
+    },
+    {
+      "id": "1778655",
+      "name": "MOAnormal_LFT_dolasetron"
+    },
+    {
+      "id": "1778656",
+      "name": "MOAnormal_LFT_doxycycline"
+    },
+    {
+      "id": "1778657",
+      "name": "MOAnormal_LFT_enalapril"
+    },
+    {
+      "id": "1778658",
+      "name": "MOAnormal_LFT_epinephrine"
+    },
+    {
+      "id": "1778659",
+      "name": "MOAnormal_LFT_esmolol"
+    },
+    {
+      "id": "1778660",
+      "name": "MOAnormal_LFT_etodolac"
+    },
+    {
+      "id": "1778661",
+      "name": "MOAnormal_LFT_etoposide"
+    },
+    {
+      "id": "1778662",
+      "name": "MOAnormal_LFT_famotidine"
+    },
+    {
+      "id": "1778663",
+      "name": "MOAnormal_LFT_flecainide"
+    },
+    {
+      "id": "1778664",
+      "name": "MOAnormal_LFT_fluconazole"
+    },
+    {
+      "id": "1778665",
+      "name": "MOAnormal_LFT_flumazenil"
+    },
+    {
+      "id": "1778666",
+      "name": "MOAnormal_LFT_fluorouracil"
+    },
+    {
+      "id": "1778667",
+      "name": "MOAnormal_LFT_fluoxetine"
+    },
+    {
+      "id": "1778668",
+      "name": "MOAnormal_LFT_fluticasone"
+    },
+    {
+      "id": "1778669",
+      "name": "MOAnormal_LFT_gentamicin"
+    },
+    {
+      "id": "1778670",
+      "name": "MOAnormal_LFT_indomethacin"
+    },
+    {
+      "id": "1778671",
+      "name": "MOAnormal_LFT_labetalol"
+    },
+    {
+      "id": "1778672",
+      "name": "MOAnormal_LFT_lansoprazole"
+    },
+    {
+      "id": "1778673",
+      "name": "MOAnormal_LFT_loperamide"
+    },
+    {
+      "id": "1778674",
+      "name": "MOAnormal_LFT_methotrexate"
+    },
+    {
+      "id": "1778675",
+      "name": "MOAnormal_LFT_methylphenidate"
+    },
+    {
+      "id": "1778676",
+      "name": "MOAnormal_LFT_metoprolol"
+    },
+    {
+      "id": "1778677",
+      "name": "MOAnormal_LFT_mirtazapine"
+    },
+    {
+      "id": "1778678",
+      "name": "MOAnormal_LFT_mometasone"
+    },
+    {
+      "id": "1778679",
+      "name": "MOAnormal_LFT_naloxone"
+    },
+    {
+      "id": "1778680",
+      "name": "MOAnormal_LFT_nicardipine"
+    },
+    {
+      "id": "1778681",
+      "name": "MOAnormal_LFT_ondansetron"
+    },
+    {
+      "id": "1778682",
+      "name": "MOAnormal_LFT_oseltamivir"
+    },
+    {
+      "id": "1778683",
+      "name": "MOAnormal_LFT_oxybutynin"
+    },
+    {
+      "id": "1778684",
+      "name": "MOAnormal_LFT_palonosetron"
+    },
+    {
+      "id": "1778685",
+      "name": "MOAnormal_LFT_phenylephrine"
+    },
+    {
+      "id": "1778686",
+      "name": "MOAnormal_LFT_prazosin"
+    },
+    {
+      "id": "1778687",
+      "name": "MOAnormal_LFT_prednisolone"
+    },
+    {
+      "id": "1778688",
+      "name": "MOAnormal_LFT_propranolol"
+    },
+    {
+      "id": "1778689",
+      "name": "MOAnormal_LFT_ranitidine"
+    },
+    {
+      "id": "1778690",
+      "name": "MOAnormal_LFT_rosuvastatin"
+    },
+    {
+      "id": "1778691",
+      "name": "MOAnormal_LFT_sertraline"
+    },
+    {
+      "id": "1778692",
+      "name": "MOAnormal_LFT_sucralfate"
+    },
+    {
+      "id": "1778693",
+      "name": "MOAnormal_LFT_sulfasalazine"
+    },
+    {
+      "id": "1778694",
+      "name": "MOAnormal_LFT_sumatriptan"
+    },
+    {
+      "id": "1778695",
+      "name": "MOAnormal_LFT_tacrolimus"
+    },
+    {
+      "id": "1778696",
+      "name": "MOAnormal_LFT_theophylline"
+    },
+    {
+      "id": "1778697",
+      "name": "MOAnormal_LFT_tolterodine"
+    },
+    {
+      "id": "1778698",
+      "name": "MOAnormal_LFT_topiramate"
+    },
+    {
+      "id": "1778699",
+      "name": "MOAnormal_LFT_trazodone"
+    },
+    {
+      "id": "1778700",
+      "name": "MOAnormal_LFT_triamcinolone"
+    },
+    {
+      "id": "1778701",
+      "name": "MOAnormal_LFT_venlafaxine"
+    },
+    {
+      "id": "1778702",
+      "name": "MOAnormal_LFT_verapamil"
+    },
+    {
+      "id": "1778703",
+      "name": "MOAnormal_LFT_tramadol"
+    },
+    {
+      "id": "1778704",
+      "name": "MOAnormal_LFT_mosapride"
+    },
+    {
+      "id": "1778705",
+      "name": "MOAnormal_LFT_magnesium hydroxide"
+    },
+    {
+      "id": "1778706",
+      "name": "MOAnormal_LFT_afloqualone"
+    },
+    {
+      "id": "1778707",
+      "name": "MOAnormal_LFT_rebamipide"
+    },
+    {
+      "id": "1778708",
+      "name": "MOAnormal_LFT_lafutidine"
+    },
+    {
+      "id": "1778709",
+      "name": "MOAnormal_LFT_bismuth oxide"
+    },
+    {
+      "id": "1778710",
+      "name": "MOAnormal_LFT_furosemide"
+    },
+    {
+      "id": "1778711",
+      "name": "MOAnormal_LFT_ambroxol"
+    },
+    {
+      "id": "1778712",
+      "name": "MOAnormal_LFT_heparin"
+    },
+    {
+      "id": "1778713",
+      "name": "MOAnormal_LFT_erdosteine"
+    }
+  ],
+  "getPlpDataArgs": {
+    "maxSampleSize": 100000,
+    "washoutPeriod": 0
+  },
+  "runPlpArgs": {
+    "minCovariateFraction": 0,
+    "normalizeData": true,
+    "testSplit": "person",
+    "testFraction": 0.25,
+    "splitSeed": 1,
+    "nfold": 5
+  },
+  "covariateSettings": [
+    {
+      "temporal": false,
+      "temporalSequence": false,
+      "DemographicsGender": true,
+      "DemographicsAgeGroup": true,
+      "DemographicsRace": true,
+      "ConditionOccurrenceAnyTimePrior": true,
+      "ConditionEraAnyTimePrior": true,
+      "ConditionGroupEraAnyTimePrior": true,
+      "DrugExposureAnyTimePrior": true,
+      "DrugEraAnyTimePrior": true,
+      "DrugGroupEraAnyTimePrior": true,
+      "ProcedureOccurrenceAnyTimePrior": true,
+      "DeviceExposureAnyTimePrior": true,
+      "MeasurementAnyTimePrior": true,
+      "ObservationAnyTimePrior": true,
+      "CharlsonIndex": true,
+      "Dcsi": true,
+      "Chads2": true,
+      "longTermStartDays": -365,
+      "mediumTermStartDays": -180,
+      "shortTermStartDays": -30,
+      "endDays": 0,
+      "includedCovariateConceptIds": [],
+      "addDescendantsToInclude": false,
+      "excludedCovariateConceptIds": [],
+      "addDescendantsToExclude": false,
+      "includedCovariateIds": [],
+      "attr_fun": "getDbDefaultCovariateData",
+      "attr_class": "covariateSettings"
+    }
+  ],
+  "populationSettings": [
+    {
+      "binary": true,
+      "includeAllOutcomes": true,
+      "firstExposureOnly": false,
+      "washoutPeriod": 0,
+      "removeSubjectsWithPriorOutcome": true,
+      "priorOutcomeLookback": 60,
+      "requireTimeAtRisk": true,
+      "minTimeAtRisk": 6,
+      "riskWindowStart": 1,
+      "startAnchor": "cohort start",
+      "riskWindowEnd": 7,
+      "endAnchor": "cohort start",
+      "verbosity": "INFO",
+      "attr_class": "populationSettings"
+    },
+    {
+      "binary": true,
+      "includeAllOutcomes": true,
+      "firstExposureOnly": false,
+      "washoutPeriod": 0,
+      "removeSubjectsWithPriorOutcome": true,
+      "priorOutcomeLookback": 60,
+      "requireTimeAtRisk": true,
+      "minTimeAtRisk": 29,
+      "riskWindowStart": 1,
+      "startAnchor": "cohort start",
+      "riskWindowEnd": 30,
+      "endAnchor": "cohort start",
+      "verbosity": "INFO",
+      "attr_class": "populationSettings"
+    },
+    {
+      "binary": true,
+      "includeAllOutcomes": true,
+      "firstExposureOnly": false,
+      "washoutPeriod": 0,
+      "removeSubjectsWithPriorOutcome": true,
+      "priorOutcomeLookback": 60,
+      "requireTimeAtRisk": true,
+      "minTimeAtRisk": 59,
+      "riskWindowStart": 1,
+      "startAnchor": "cohort start",
+      "riskWindowEnd": 60,
+      "endAnchor": "cohort start",
+      "verbosity": "INFO",
+      "attr_class": "populationSettings"
+    },
+    {
+      "binary": true,
+      "includeAllOutcomes": true,
+      "firstExposureOnly": true,
+      "washoutPeriod": 0,
+      "removeSubjectsWithPriorOutcome": true,
+      "priorOutcomeLookback": 60,
+      "requireTimeAtRisk": true,
+      "minTimeAtRisk": 6,
+      "riskWindowStart": 1,
+      "startAnchor": "cohort start",
+      "riskWindowEnd": 7,
+      "endAnchor": "cohort start",
+      "verbosity": "INFO",
+      "attr_class": "populationSettings"
+    },
+    {
+      "binary": true,
+      "includeAllOutcomes": true,
+      "firstExposureOnly": true,
+      "washoutPeriod": 0,
+      "removeSubjectsWithPriorOutcome": true,
+      "priorOutcomeLookback": 60,
+      "requireTimeAtRisk": true,
+      "minTimeAtRisk": 29,
+      "riskWindowStart": 1,
+      "startAnchor": "cohort start",
+      "riskWindowEnd": 30,
+      "endAnchor": "cohort start",
+      "verbosity": "INFO",
+      "attr_class": "populationSettings"
+    },
+    {
+      "binary": true,
+      "includeAllOutcomes": true,
+      "firstExposureOnly": true,
+      "washoutPeriod": 0,
+      "removeSubjectsWithPriorOutcome": true,
+      "priorOutcomeLookback": 60,
+      "requireTimeAtRisk": true,
+      "minTimeAtRisk": 59,
+      "riskWindowStart": 1,
+      "startAnchor": "cohort start",
+      "riskWindowEnd": 60,
+      "endAnchor": "cohort start",
+      "verbosity": "INFO",
+      "attr_class": "populationSettings"
+    }
+  ],
+  "modelSettings": [
+    {
+      "AdaBoostSettings": {
+        "nEstimators": [10, 50, 100],
+        "learningRate": [0.5, 0.9, 1],
+        "seed": 31560496
+      }
+    },
+    {
+      "LassoLogisticRegressionSettings": {
+        "variance": 0.01,
+        "seed": 21163766,
+        "includeCovariateIds": null,
+        "noShrinkage": 0,
+        "threads": -1,
+        "useCrossValidation": true,
+        "upperLimit": 20,
+        "lowerLimit": 0.01
+      }
+    },
+    {
+      "GradientBoostingMachineSettings": {
+        "ntrees": [100, 1000],
+        "earlyStopRound": 25,
+        "maxDepth": [4, 6, 17],
+        "minRows": 2,
+        "learnRate": [0.005, 0.01, 0.1],
+        "nthread": 20,
+        "seed": 4636961
+      }
+    }
+  ]
+}

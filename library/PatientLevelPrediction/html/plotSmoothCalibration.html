@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot the smooth calibration as detailed in Calster et al. &quot;A...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for plotSmoothCalibration {PatientLevelPrediction}"><tr><td>plotSmoothCalibration {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot the smooth calibration as detailed in Calster et al. &quot;A calibration heirarchy for risk models
+was defined: from utopia to empirical data&quot; (2016)</h2>
+
+<h3>Description</h3>
+
+<p>Plot the smooth calibration as detailed in Calster et al. &quot;A calibration heirarchy for risk models
+was defined: from utopia to empirical data&quot; (2016)
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plotSmoothCalibration(
+  plpResult,
+  smooth = "loess",
+  span = 0.75,
+  nKnots = 5,
+  scatter = FALSE,
+  bins = 20,
+  sample = TRUE,
+  typeColumn = "evaluation",
+  saveLocation = NULL,
+  fileName = "smoothCalibration.pdf"
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>plpResult</code></td>
+<td>
+<p>The result of running <code><a href="../../PatientLevelPrediction/help/runPlp.html">runPlp</a></code> function. An object containing the
+model or location where the model is save, the data selection settings, the
+preprocessing and training settings as well as various performance measures
+obtained by the model.</p>
+</td></tr>
+<tr valign="top"><td><code>smooth</code></td>
+<td>
+<p>options: 'loess' or 'rcs'</p>
+</td></tr>
+<tr valign="top"><td><code>span</code></td>
+<td>
+<p>This specifies the width of span used for loess. This will allow for faster
+computing and lower memory usage.</p>
+</td></tr>
+<tr valign="top"><td><code>nKnots</code></td>
+<td>
+<p>The number of knots to be used by the rcs evaluation. Default is 5</p>
+</td></tr>
+<tr valign="top"><td><code>scatter</code></td>
+<td>
+<p>plot the decile calibrations as points on the graph. Default is False</p>
+</td></tr>
+<tr valign="top"><td><code>bins</code></td>
+<td>
+<p>The number of bins for the histogram. Default is 20.</p>
+</td></tr>
+<tr valign="top"><td><code>sample</code></td>
+<td>
+<p>If using loess then by default 20,000 patients will be sampled to save time</p>
+</td></tr>
+<tr valign="top"><td><code>typeColumn</code></td>
+<td>
+<p>The name of the column specifying the evaluation type</p>
+</td></tr>
+<tr valign="top"><td><code>saveLocation</code></td>
+<td>
+<p>Directory to save plot (if NULL plot is not saved)</p>
+</td></tr>
+<tr valign="top"><td><code>fileName</code></td>
+<td>
+<p>Name of the file to save to plot, for example
+'plot.png'. See the function <code>ggsave</code> in the ggplot2 package for
+supported file formats.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Create a plot showing the smoothed calibration #'
+</p>
+
+
+<h3>Value</h3>
+
+<p>A ggplot object.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

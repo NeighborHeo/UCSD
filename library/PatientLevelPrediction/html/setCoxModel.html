@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create setting for lasso Cox model</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for setCoxModel {PatientLevelPrediction}"><tr><td>setCoxModel {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create setting for lasso Cox model</h2>
+
+<h3>Description</h3>
+
+<p>Create setting for lasso Cox model
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+setCoxModel(
+  variance = 0.01,
+  seed = NULL,
+  includeCovariateIds = c(),
+  noShrinkage = c(),
+  threads = -1,
+  upperLimit = 20,
+  lowerLimit = 0.01,
+  tolerance = 2e-07,
+  maxIterations = 3000
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>variance</code></td>
+<td>
+<p>Numeric: prior distribution starting variance</p>
+</td></tr>
+<tr valign="top"><td><code>seed</code></td>
+<td>
+<p>An option to add a seed when training the model</p>
+</td></tr>
+<tr valign="top"><td><code>includeCovariateIds</code></td>
+<td>
+<p>a set of covariate IDS to limit the analysis to</p>
+</td></tr>
+<tr valign="top"><td><code>noShrinkage</code></td>
+<td>
+<p>a set of covariates whcih are to be forced to be included in the final model. default is the intercept</p>
+</td></tr>
+<tr valign="top"><td><code>threads</code></td>
+<td>
+<p>An option to set number of threads when training model</p>
+</td></tr>
+<tr valign="top"><td><code>upperLimit</code></td>
+<td>
+<p>Numeric: Upper prior variance limit for grid-search</p>
+</td></tr>
+<tr valign="top"><td><code>lowerLimit</code></td>
+<td>
+<p>Numeric: Lower prior variance limit for grid-search</p>
+</td></tr>
+<tr valign="top"><td><code>tolerance</code></td>
+<td>
+<p>Numeric: maximum relative change in convergence criterion from successive iterations to achieve convergence</p>
+</td></tr>
+<tr valign="top"><td><code>maxIterations</code></td>
+<td>
+<p>Integer: maximum iterations of Cyclops to attempt before returning a failed-to-converge error</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+model.lr &lt;- setCoxModel()
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

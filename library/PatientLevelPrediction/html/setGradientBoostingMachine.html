@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create setting for gradient boosting machine model using...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for setGradientBoostingMachine {PatientLevelPrediction}"><tr><td>setGradientBoostingMachine {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create setting for gradient boosting machine model using gbm_xgboost implementation</h2>
+
+<h3>Description</h3>
+
+<p>Create setting for gradient boosting machine model using gbm_xgboost implementation
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+setGradientBoostingMachine(
+  ntrees = c(100, 300),
+  nthread = 20,
+  earlyStopRound = 25,
+  maxDepth = c(4, 6, 8),
+  minChildWeight = 1,
+  learnRate = c(0.05, 0.1, 0.3),
+  scalePosWeight = 1,
+  lambda = 1,
+  alpha = 0,
+  seed = sample(1e+07, 1)
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>ntrees</code></td>
+<td>
+<p>The number of trees to build</p>
+</td></tr>
+<tr valign="top"><td><code>nthread</code></td>
+<td>
+<p>The number of computer threads to use (how many cores do you have?)</p>
+</td></tr>
+<tr valign="top"><td><code>earlyStopRound</code></td>
+<td>
+<p>If the performance does not increase over earlyStopRound number of trees then training stops (this prevents overfitting)</p>
+</td></tr>
+<tr valign="top"><td><code>maxDepth</code></td>
+<td>
+<p>Maximum depth of each tree - a large value will lead to slow model training</p>
+</td></tr>
+<tr valign="top"><td><code>minChildWeight</code></td>
+<td>
+<p>Minimum sum of of instance weight in a child node - larger values are more conservative</p>
+</td></tr>
+<tr valign="top"><td><code>learnRate</code></td>
+<td>
+<p>The boosting learn rate</p>
+</td></tr>
+<tr valign="top"><td><code>scalePosWeight</code></td>
+<td>
+<p>Controls weight of positive class in loss - useful for imbalanced classes</p>
+</td></tr>
+<tr valign="top"><td><code>lambda</code></td>
+<td>
+<p>L2 regularization on weights - larger is more conservative</p>
+</td></tr>
+<tr valign="top"><td><code>alpha</code></td>
+<td>
+<p>L1 regularization on weights - larger is more conservative</p>
+</td></tr>
+<tr valign="top"><td><code>seed</code></td>
+<td>
+<p>An option to add a seed when training the final model</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+model.gbm &lt;- setGradientBoostingMachine(ntrees=c(10,100), nthread=20,
+                           maxDepth=c(4,6), learnRate=c(0.1,0.3))
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

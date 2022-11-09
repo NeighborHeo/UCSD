@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Execute the Study</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for execute {PredDrugInducedLiverInjury}"><tr><td>execute {PredDrugInducedLiverInjury}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Execute the Study</h2>
+
+<h3>Description</h3>
+
+<p>Execute the Study
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+execute(
+  databaseDetails,
+  outputFolder,
+  createProtocol = F,
+  createCohorts = F,
+  runDiagnostic = F,
+  viewDiagnostic = F,
+  runAnalyses = F,
+  createValidationPackage = F,
+  useHydra = F,
+  skeletonVersion = "v0.0.1",
+  analysesToValidate = NULL,
+  packageResults = F,
+  minCellCount = 5,
+  viewShiny = F,
+  onlyFetchData = F,
+  sampleSize = NULL,
+  logSettings
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>databaseDetails</code></td>
+<td>
+<p>Database details created using <code>PatientLevelPrediction::createDatabaseDetails()</code></p>
+</td></tr>
+<tr valign="top"><td><code>outputFolder</code></td>
+<td>
+<p>Name of local folder to place results; make sure to use forward slashes
+(/). Do not use a folder on a network drive since this greatly impacts
+performance.</p>
+</td></tr>
+<tr valign="top"><td><code>createProtocol</code></td>
+<td>
+<p>Creates a protocol based on the analyses specification</p>
+</td></tr>
+<tr valign="top"><td><code>createCohorts</code></td>
+<td>
+<p>Create the cohortTable table with the target population and outcome cohorts?</p>
+</td></tr>
+<tr valign="top"><td><code>runDiagnostic</code></td>
+<td>
+<p>Runs a diagnostic of the T, O and tar settings for the cdmDatabaseSchema - can be used to check whether to change 
+settings or whether the prediction may not do well.</p>
+</td></tr>
+<tr valign="top"><td><code>viewDiagnostic</code></td>
+<td>
+<p>Opens a shiny app with the diagnostic results (run after runDiagnostic completes)</p>
+</td></tr>
+<tr valign="top"><td><code>runAnalyses</code></td>
+<td>
+<p>Run the model development</p>
+</td></tr>
+<tr valign="top"><td><code>createValidationPackage</code></td>
+<td>
+<p>Create a package for sharing the models</p>
+</td></tr>
+<tr valign="top"><td><code>useHydra</code></td>
+<td>
+<p>Whether to use Hydra to create the validation package (requires hydra to be installed) or download the master version of the skeleton (requires internet access)</p>
+</td></tr>
+<tr valign="top"><td><code>skeletonVersion</code></td>
+<td>
+<p>The version of the validation skeleton to use</p>
+</td></tr>
+<tr valign="top"><td><code>analysesToValidate</code></td>
+<td>
+<p>A vector of analysis ids (e.g., c(1,3,10)) specifying which analysese to export into validation package. Default is NULL and all are exported.</p>
+</td></tr>
+<tr valign="top"><td><code>packageResults</code></td>
+<td>
+<p>Should results be packaged for later sharing?</p>
+</td></tr>
+<tr valign="top"><td><code>minCellCount</code></td>
+<td>
+<p>The minimum number of subjects contributing to a count before it can be included 
+in packaged results.</p>
+</td></tr>
+<tr valign="top"><td><code>viewShiny</code></td>
+<td>
+<p>View a shiny app with the results</p>
+</td></tr>
+<tr valign="top"><td><code>onlyFetchData</code></td>
+<td>
+<p>Only fetch data for the analyses without fitting models. Setting this flag will overwrite your input provided to the runAnalyses and createCohorts parameters.</p>
+</td></tr>
+<tr valign="top"><td><code>sampleSize</code></td>
+<td>
+<p>The number of patients in the target cohort to sample (if NULL uses all patients)</p>
+</td></tr>
+<tr valign="top"><td><code>logSettings</code></td>
+<td>
+<p>The log setting <code>PatientLevelPrediction::createLogSettings()</code></p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This function executes the PredDrugInducedLiverInjury Study.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+connectionDetails &lt;- createConnectionDetails(dbms = "postgresql",
+                                             user = "joe",
+                                             password = "secret",
+                                             server = "myserver")
+                                             
+ databaseDetails &lt;- PatientLevelPrediction::createDatabaseDetails(
+ connectionDetails = connectionDetails,
+ cdmDatabaseSchema = cdmDatabaseSchema,
+ cdmDatabaseName = cdmDatabaseName,
+ tempEmulationSchema = tempEmulationSchema,
+ cohortDatabaseSchema = cohortDatabaseSchema,
+ cohortTable = cohortTable,
+ outcomeDatabaseSchema = cohortDatabaseSchema,
+ outcomeTable = cohortTable,
+ cdmVersion = cdmVersion
+ )  
+ 
+ logSettings &lt;- PatientLevelPrediction::createLogSettings(
+ verbosity = "INFO",
+ timeStamp = T,
+ logName = 'skeletonPlp'
+ )                                          
+
+execute(databaseDetails = databaseDetails,
+        outputFolder = "c:/temp/study_results", 
+        createProtocol = T,
+        createCohorts = T,
+        runDiagnostic = F,
+        viewDiagnostic = F,
+        runAnalyses = T,
+        createValidationPackage = T,
+        useHydra = F,
+        skeletonVersion = 'v1.0.1',
+        packageResults = F,
+        minCellCount = 5,
+        viewShiny = F,
+        sampleSize = 10000,
+        logSettings = logSettings
+        )
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>PredDrugInducedLiverInjury</em> version 1.0.6 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

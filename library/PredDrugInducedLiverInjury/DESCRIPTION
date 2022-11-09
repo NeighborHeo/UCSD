@@ -1,0 +1,18 @@
+Package: PredDrugInducedLiverInjury
+Type: Package
+Title: A machine learning package to predict drug-induced liver injury
+Version: 1.0.6
+Author: Seng Chan You [aut, cre]
+Maintainer: Seng Chan You <seng.chan.you@ohdsi.org>
+Description: A machine learning package to predict drug-induced liver injury
+Depends: R(>= 3.6.0)
+Imports: CohortGenerator (>= 0.3.0), DatabaseConnector (>= 5.0.0),
+        dplyr, jsonlite, knitr, OhdsiSharing, PatientLevelPrediction
+        (>= 5.0.2), ParallelLogger, rlang, rmarkdown, shiny, utils
+Suggests: CirceR, devtools, Hydra
+Remotes: ohdsi/CirceR, ohdsi/CohortGenerator@from_package, ohdsi/Hydra,
+        ohdsi/OhdsiSharing, ohdsi/PatientLevelPrediction@issue242
+License: Apache License 2.0
+RoxygenNote: 7.1.2
+SkeletonNote: 1.0.0
+Built: R 4.1.3; ; 2022-11-09 13:22:35 UTC; windows

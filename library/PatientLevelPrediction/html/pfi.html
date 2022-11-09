@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: pfi</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for pfi {PatientLevelPrediction}"><tr><td>pfi {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>pfi</h2>
+
+<h3>Description</h3>
+
+<p>Calculate the permutation feature importance for a PLP model.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+pfi(
+  plpResult,
+  population,
+  plpData,
+  repeats = 1,
+  covariates = NULL,
+  cores = NULL,
+  log = NULL,
+  logthreshold = "INFO"
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>plpResult</code></td>
+<td>
+<p>An object of type <code>runPlp</code></p>
+</td></tr>
+<tr valign="top"><td><code>population</code></td>
+<td>
+<p>The population created using createStudyPopulation() who will have their risks predicted</p>
+</td></tr>
+<tr valign="top"><td><code>plpData</code></td>
+<td>
+<p>An object of type <code>plpData</code> - the patient level prediction
+data extracted from the CDM.</p>
+</td></tr>
+<tr valign="top"><td><code>repeats</code></td>
+<td>
+<p>The number of times to permute each covariate</p>
+</td></tr>
+<tr valign="top"><td><code>covariates</code></td>
+<td>
+<p>A vector of covariates to calculate the pfi for.  If NULL it uses all covariates included in the model.</p>
+</td></tr>
+<tr valign="top"><td><code>cores</code></td>
+<td>
+<p>Number of cores to use when running this (it runs in parallel)</p>
+</td></tr>
+<tr valign="top"><td><code>log</code></td>
+<td>
+<p>A location to save the log for running pfi</p>
+</td></tr>
+<tr valign="top"><td><code>logthreshold</code></td>
+<td>
+<p>The log threshold (e.g., INFO, TRACE, ...)</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The function permutes the each covariate/features &lt;repeats&gt; times and calculates the mean AUC change caused by the permutation.
+</p>
+
+
+<h3>Value</h3>
+
+<p>A dataframe with the covariateIds and the pfi (change in AUC caused by permuting the covariate) value
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

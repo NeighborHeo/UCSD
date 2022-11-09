@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create sqlite database with the results</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for insertResultsToSqlite {PatientLevelPrediction}"><tr><td>insertResultsToSqlite {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create sqlite database with the results</h2>
+
+<h3>Description</h3>
+
+<p>This function create an sqlite database with the PLP result schema and inserts all results
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+insertResultsToSqlite(
+  resultLocation,
+  cohortDefinitions,
+  databaseList = NULL,
+  sqliteLocation = file.path(resultLocation, "sqlite")
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>resultLocation</code></td>
+<td>
+<p>(string) location of directory where the main package results were saved</p>
+</td></tr>
+<tr valign="top"><td><code>cohortDefinitions</code></td>
+<td>
+<p>A set of one or more cohorts extracted using ROhdsiWebApi::exportCohortDefinitionSet()</p>
+</td></tr>
+<tr valign="top"><td><code>databaseList</code></td>
+<td>
+<p>A list created by <code>createDatabaseList</code> to specify the databases</p>
+</td></tr>
+<tr valign="top"><td><code>sqliteLocation</code></td>
+<td>
+<p>(string) location of directory where the sqlite database will be saved</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This function can be used upload PatientLevelPrediction results into an sqlite database
+</p>
+
+
+<h3>Value</h3>
+
+<p>Returns the location of the sqlite database file
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

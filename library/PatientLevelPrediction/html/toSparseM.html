@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Convert the plpData in COO format into a sparse R matrix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for toSparseM {PatientLevelPrediction}"><tr><td>toSparseM {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Convert the plpData in COO format into a sparse R matrix</h2>
+
+<h3>Description</h3>
+
+<p>Converts the standard plpData to a sparse matrix
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+toSparseM(plpData, cohort = NULL, map = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>plpData</code></td>
+<td>
+<p>An object of type <code>plpData</code> with covariate in coo format - the patient level prediction
+data extracted from the CDM.</p>
+</td></tr>
+<tr valign="top"><td><code>cohort</code></td>
+<td>
+<p>If specified the plpData is restricted to the rowIds in the cohort (otherwise plpData$labels is used)</p>
+</td></tr>
+<tr valign="top"><td><code>map</code></td>
+<td>
+<p>A covariate map (telling us the column number for covariates)</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This function converts the covariate file from ffdf in COO format into a sparse matrix from
+the package Matrix
+</p>
+
+
+<h3>Value</h3>
+
+<p>Returns a list, containing the data as a sparse matrix, the plpData covariateRef
+and a data.frame named map that tells us what covariate corresponds to each column
+This object is a list with the following components: </p>
+
+<dl>
+<dt>data</dt><dd><p>A sparse matrix with the rows corresponding to each person in the plpData and the columns corresponding to the covariates.</p>
+</dd>
+<dt>covariateRef</dt><dd><p>The plpData covariateRef.</p>
+</dd>
+<dt>map</dt><dd><p>A data.frame containing the data column ids and the corresponding covariateId from covariateRef.</p>
+</dd>
+</dl>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+#TODO
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

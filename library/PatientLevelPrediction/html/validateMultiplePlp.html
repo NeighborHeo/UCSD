@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: externally validate the multiple plp models across new...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for validateMultiplePlp {PatientLevelPrediction}"><tr><td>validateMultiplePlp {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>externally validate the multiple plp models across new datasets</h2>
+
+<h3>Description</h3>
+
+<p>This function loads all the models in a multiple plp analysis folder and
+validates the models on new data
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+validateMultiplePlp(
+  analysesLocation,
+  validationDatabaseDetails,
+  validationRestrictPlpDataSettings = createRestrictPlpDataSettings(),
+  recalibrate = NULL,
+  cohortDefinitions = NULL,
+  saveDirectory = NULL
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>analysesLocation</code></td>
+<td>
+<p>The location where the multiple plp analyses are</p>
+</td></tr>
+<tr valign="top"><td><code>validationDatabaseDetails</code></td>
+<td>
+<p>A single or list of validation database settings created using <code>createDatabaseDetails()</code></p>
+</td></tr>
+<tr valign="top"><td><code>validationRestrictPlpDataSettings</code></td>
+<td>
+<p>The settings specifying the extra restriction settings when extracting the data created using <code>createRestrictPlpDataSettings()</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>recalibrate</code></td>
+<td>
+<p>A vector of recalibration methods (currently supports 'RecalibrationintheLarge' and/or 'weakRecalibration')</p>
+</td></tr>
+<tr valign="top"><td><code>cohortDefinitions</code></td>
+<td>
+<p>A list of cohortDefinitions</p>
+</td></tr>
+<tr valign="top"><td><code>saveDirectory</code></td>
+<td>
+<p>The location to save to validation results</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Users need to input a location where the results of the multiple plp analyses
+are found and the connection and database settings for the new data
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

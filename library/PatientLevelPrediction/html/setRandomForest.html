@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create setting for random forest model with python (very...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for setRandomForest {PatientLevelPrediction}"><tr><td>setRandomForest {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create setting for random forest model with python (very fast)</h2>
+
+<h3>Description</h3>
+
+<p>Create setting for random forest model with python (very fast)
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+setRandomForest(
+  ntrees = list(100, 500),
+  criterion = list("gini"),
+  maxDepth = list(4, 10, 17),
+  minSamplesSplit = list(2, 5),
+  minSamplesLeaf = list(1, 10),
+  minWeightFractionLeaf = list(0),
+  mtries = list("sqrt", "log2"),
+  maxLeafNodes = list(NULL),
+  minImpurityDecrease = list(0),
+  bootstrap = list(TRUE),
+  maxSamples = list(NULL, 0.9),
+  oobScore = list(FALSE),
+  nJobs = list(NULL),
+  classWeight = list("balanced_subsample", NULL),
+  seed = sample(1e+05, 1)
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>ntrees</code></td>
+<td>
+<p>(list) The number of trees to build</p>
+</td></tr>
+<tr valign="top"><td><code>criterion</code></td>
+<td>
+<p>(list) The function to measure the quality of a split. Supported criteria are “gini” for the Gini impurity and “entropy” for the information gain. Note: this parameter is tree-specific.</p>
+</td></tr>
+<tr valign="top"><td><code>maxDepth</code></td>
+<td>
+<p>(list) The maximum depth of the tree. If NULL, then nodes are expanded until all leaves are pure or until all leaves contain less than minSamplesSplit samples.</p>
+</td></tr>
+<tr valign="top"><td><code>minSamplesSplit</code></td>
+<td>
+<p>(list) The minimum number of samples required to split an internal node</p>
+</td></tr>
+<tr valign="top"><td><code>minSamplesLeaf</code></td>
+<td>
+<p>(list) The minimum number of samples required to be at a leaf node. A split point at any depth will only be considered if it leaves at least minSamplesLeaf training samples in each of the left and right branches. This may have the effect of smoothing the model, especially in regression.</p>
+</td></tr>
+<tr valign="top"><td><code>minWeightFractionLeaf</code></td>
+<td>
+<p>(list) The minimum weighted fraction of the sum total of weights (of all the input samples) required to be at a leaf node. Samples have equal weight when sampleWeight is not provided.</p>
+</td></tr>
+<tr valign="top"><td><code>mtries</code></td>
+<td>
+<p>(list) The number of features to consider when looking for the best split: 
+</p>
+
+<ul>
+<li><p>intthen consider max_features features at each split.
+</p>
+</li>
+<li><p>floatthen max_features is a fraction and round(max_features * n_features) features are considered at each split
+</p>
+</li>
+<li><p>'sqrt'then max_features=sqrt(n_features)
+</p>
+</li>
+<li><p>'log2'then max_features=log2(n_features).
+</p>
+</li>
+<li><p>NULLthen max_features=n_features
+</p>
+</li></ul>
+</td></tr>
+<tr valign="top"><td><code>maxLeafNodes</code></td>
+<td>
+<p>(list) Grow trees with max_leaf_nodes in best-first fashion. Best nodes are defined as relative reduction in impurity. If None then unlimited number of leaf nodes.</p>
+</td></tr>
+<tr valign="top"><td><code>minImpurityDecrease</code></td>
+<td>
+<p>(list) A node will be split if this split induces a decrease of the impurity greater than or equal to this value.</p>
+</td></tr>
+<tr valign="top"><td><code>bootstrap</code></td>
+<td>
+<p>(list) Whether bootstrap samples are used when building trees. If False, the whole dataset is used to build each tree.</p>
+</td></tr>
+<tr valign="top"><td><code>maxSamples</code></td>
+<td>
+<p>(list) If bootstrap is True, the number of samples to draw from X to train each base estimator.</p>
+</td></tr>
+<tr valign="top"><td><code>oobScore</code></td>
+<td>
+<p>(list) Whether to use out-of-bag samples to estimate the generalization score. Only available if bootstrap=True.</p>
+</td></tr>
+<tr valign="top"><td><code>nJobs</code></td>
+<td>
+<p>The number of jobs to run in parallel.</p>
+</td></tr>
+<tr valign="top"><td><code>classWeight</code></td>
+<td>
+<p>(list) Weights associated with classes. If not given, all classes are supposed to have weight one. NULL, “balanced”, “balanced_subsample”</p>
+</td></tr>
+<tr valign="top"><td><code>seed</code></td>
+<td>
+<p>A seed when training the final model</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+model.rf &lt;- setRandomForest(mtries=list('auto',5,20),  ntrees=c(10,100), 
+                           maxDepth=c(5,20))
+
+## End(Not run)                           
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

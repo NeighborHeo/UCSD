@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Insert a diagnostic result into a PLP result schema database</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for addDiagnosePlpToDatabase {PatientLevelPrediction}"><tr><td>addDiagnosePlpToDatabase {PatientLevelPrediction}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Insert a diagnostic result into a PLP result schema database</h2>
+
+<h3>Description</h3>
+
+<p>This function inserts a diagnostic result into the result schema
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+addDiagnosePlpToDatabase(
+  diagnosePlp,
+  conn,
+  databaseSchemaSettings,
+  cohortDefinitions,
+  databaseList = NULL,
+  overWriteIfExists = T
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>diagnosePlp</code></td>
+<td>
+<p>An object of class <code>diagnosePlp</code></p>
+</td></tr>
+<tr valign="top"><td><code>conn</code></td>
+<td>
+<p>A connection to a database created by using the
+function <code>connect</code> in the
+<code>DatabaseConnector</code> package.</p>
+</td></tr>
+<tr valign="top"><td><code>databaseSchemaSettings</code></td>
+<td>
+<p>A object created by <code>createDatabaseSchemaSettings</code> with all the settings specifying the result tables</p>
+</td></tr>
+<tr valign="top"><td><code>cohortDefinitions</code></td>
+<td>
+<p>A set of one or more cohorts extracted using ROhdsiWebApi::exportCohortDefinitionSet()</p>
+</td></tr>
+<tr valign="top"><td><code>databaseList</code></td>
+<td>
+<p>(Optional) If you wish to overwrite the settings in the plp object use <code>createdatabaseList</code> to specify the databases</p>
+</td></tr>
+<tr valign="top"><td><code>overWriteIfExists</code></td>
+<td>
+<p>(default: T) Whether to delete existing results and overwrite them</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This function can be used to upload a diagnostic result into a database
+</p>
+
+
+<h3>Value</h3>
+
+<p>Returns NULL but uploads the diagnostic into the database schema specified in databaseSchemaSettings
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>PatientLevelPrediction</em> version 6.0.8 <a href="00Index.html">Index</a>]</div>
+</div></body></html>
