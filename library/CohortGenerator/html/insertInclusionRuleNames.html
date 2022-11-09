@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Used to insert the inclusion rule names from a cohort...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for insertInclusionRuleNames {CohortGenerator}"><tr><td>insertInclusionRuleNames {CohortGenerator}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Used to insert the inclusion rule names from a cohort definition set
+when generating cohorts that include cohort statistics</h2>
+
+<h3>Description</h3>
+
+<p>This function will take a cohortDefinitionSet that inclusions the Circe JSON
+representation of each cohort, parse the InclusionRule property to obtain
+the inclusion rule name and sequence number and insert the values into the
+cohortInclusionTable. This function is only required when generating cohorts
+that include cohort statistics.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+insertInclusionRuleNames(
+  connectionDetails = NULL,
+  connection = NULL,
+  cohortDefinitionSet,
+  cohortDatabaseSchema,
+  cohortInclusionTable = getCohortTableNames()$cohortInclusionTable
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>connectionDetails</code></td>
+<td>
+<p>An object of type <code>connectionDetails</code> as created using the
+<code><a href="../../DatabaseConnector/help/createConnectionDetails.html">createConnectionDetails</a></code> function in the
+DatabaseConnector package. Can be left NULL if <code>connection</code> is
+provided.</p>
+</td></tr>
+<tr valign="top"><td><code>connection</code></td>
+<td>
+<p>An object of type <code>connection</code> as created using the
+<code><a href="../../DatabaseConnector/help/connect.html">connect</a></code> function in the
+DatabaseConnector package. Can be left NULL if <code>connectionDetails</code>
+is provided, in which case a new connection will be opened at the start
+of the function, and closed when the function finishes.</p>
+</td></tr>
+<tr valign="top"><td><code>cohortDefinitionSet</code></td>
+<td>
+<p>The <code>cohortDefinitionSet</code> argument must be a data frame with 
+the following columns: </p>
+
+<dl>
+<dt>cohortId</dt><dd><p>The unique integer identifier of the cohort</p>
+</dd> 
+<dt>cohortName</dt><dd><p>The cohort's name</p>
+</dd>
+<dt>sql</dt><dd><p>The OHDSI-SQL used to generate the cohort</p>
+</dd></dl>
+
+<p>Optionally, this data frame may contain: </p>
+
+<dl>
+<dt>json</dt><dd><p>The Circe JSON representation of the cohort</p>
+</dd></dl>
+</td></tr>
+<tr valign="top"><td><code>cohortDatabaseSchema</code></td>
+<td>
+<p>Schema name where your cohort tables reside. Note that for SQL Server,
+this should include both the database and schema name, for example
+'scratch.dbo'.</p>
+</td></tr>
+<tr valign="top"><td><code>cohortInclusionTable</code></td>
+<td>
+<p>Name of the inclusion table, one of the tables for storing
+inclusion rule statistics.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A data frame containing the inclusion rules by cohort and sequence ID
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>CohortGenerator</em> version 0.7.0 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

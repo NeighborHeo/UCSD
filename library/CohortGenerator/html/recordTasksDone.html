@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Record a task as complete</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for recordTasksDone {CohortGenerator}"><tr><td>recordTasksDone {CohortGenerator}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Record a task as complete</h2>
+
+<h3>Description</h3>
+
+<p>This function will record a task as completed in the <code>recordKeepingFile</code>
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+recordTasksDone(..., checksum, recordKeepingFile, incremental = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Parameter values used to identify the key
+in the incremental record keeping file</p>
+</td></tr>
+<tr valign="top"><td><code>checksum</code></td>
+<td>
+<p>The checksum representing the operation to check</p>
+</td></tr>
+<tr valign="top"><td><code>recordKeepingFile</code></td>
+<td>
+<p>A file path to a CSV file containing the record
+keeping information.</p>
+</td></tr>
+<tr valign="top"><td><code>incremental</code></td>
+<td>
+<p>When TRUE, this function will record tasks otherwise
+it will return without attempting to perform any action</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>CohortGenerator</em> version 0.7.0 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

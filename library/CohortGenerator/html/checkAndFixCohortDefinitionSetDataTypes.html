@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Check if a cohort definition set is using the proper data...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for checkAndFixCohortDefinitionSetDataTypes {CohortGenerator}"><tr><td>checkAndFixCohortDefinitionSetDataTypes {CohortGenerator}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Check if a cohort definition set is using the proper data types</h2>
+
+<h3>Description</h3>
+
+<p>This function checks a data.frame to verify it holds the expected format
+for a cohortDefinitionSet's data types and can optionally fix data types
+that do not match the specification.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+checkAndFixCohortDefinitionSetDataTypes(
+  x,
+  fixDataTypes = TRUE,
+  emitWarning = FALSE
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>The cohortDefinitionSet data.frame to check</p>
+</td></tr>
+<tr valign="top"><td><code>fixDataTypes</code></td>
+<td>
+<p>When TRUE, this function will attempt to fix the data types
+to match the specification. @seealso [createEmptyCohortDefinitionSet()].</p>
+</td></tr>
+<tr valign="top"><td><code>emitWarning</code></td>
+<td>
+<p>When TRUE, this function will emit warning messages when problems are
+encountered.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Returns a list() of the following form:
+</p>
+<p>list(
+dataTypesMatch = TRUE/FALSE,
+x = data.frame()
+)
+</p>
+<p>dataTypesMatch == TRUE when the supplied data.frame x matches the cohortDefinitionSet
+specification's data types.
+</p>
+<p>If fixDataTypes == TRUE, x will hold the original data from x with the
+data types corrected. Otherwise x will hold the original value passed to this
+function.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>CohortGenerator</em> version 0.7.0 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

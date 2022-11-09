@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Save the cohort definition set to the file system</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for saveCohortDefinitionSet {CohortGenerator}"><tr><td>saveCohortDefinitionSet {CohortGenerator}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Save the cohort definition set to the file system</h2>
+
+<h3>Description</h3>
+
+<p>This function saves a cohortDefinitionSet to the file system and provides
+options for specifying where to write the individual elements: the settings
+file will contain the cohort information as a CSV specified by the
+settingsFileName, the cohort JSON is written to the jsonFolder and the SQL
+is written to the sqlFolder. We also provide a way to specify the
+json/sql file name format using the cohortFileNameFormat and
+cohortFileNameValue parameters.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+saveCohortDefinitionSet(
+  cohortDefinitionSet,
+  settingsFileName = "inst/Cohorts.csv",
+  jsonFolder = "inst/cohorts",
+  sqlFolder = "inst/sql/sql_server",
+  cohortFileNameFormat = "%s",
+  cohortFileNameValue = c("cohortId"),
+  verbose = FALSE
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>cohortDefinitionSet</code></td>
+<td>
+<p>The <code>cohortDefinitionSet</code> argument must be a data frame with 
+the following columns: </p>
+
+<dl>
+<dt>cohortId</dt><dd><p>The unique integer identifier of the cohort</p>
+</dd> 
+<dt>cohortName</dt><dd><p>The cohort's name</p>
+</dd>
+<dt>sql</dt><dd><p>The OHDSI-SQL used to generate the cohort</p>
+</dd></dl>
+
+<p>Optionally, this data frame may contain: </p>
+
+<dl>
+<dt>json</dt><dd><p>The Circe JSON representation of the cohort</p>
+</dd></dl>
+</td></tr>
+<tr valign="top"><td><code>settingsFileName</code></td>
+<td>
+<p>The name of the CSV file that will hold the cohort information
+including the cohortId and cohortName</p>
+</td></tr>
+<tr valign="top"><td><code>jsonFolder</code></td>
+<td>
+<p>The name of the folder that will hold the JSON representation
+of the cohort if it is available in the cohortDefinitionSet</p>
+</td></tr>
+<tr valign="top"><td><code>sqlFolder</code></td>
+<td>
+<p>The name of the folder that will hold the SQL representation
+of the cohort.</p>
+</td></tr>
+<tr valign="top"><td><code>cohortFileNameFormat</code></td>
+<td>
+<p>Defines the format string  for naming the cohort
+JSON and SQL files. The format string follows the
+standard defined in the base sprintf function.</p>
+</td></tr>
+<tr valign="top"><td><code>cohortFileNameValue</code></td>
+<td>
+<p>Defines the columns in the cohortDefinitionSet to use
+in conjunction with the cohortFileNameFormat parameter.</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>When TRUE, logging messages are emitted to indicate export
+progress.</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>CohortGenerator</em> version 0.7.0 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

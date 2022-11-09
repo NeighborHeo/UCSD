@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Get a cohort definition set</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for getCohortDefinitionSet {CohortGenerator}"><tr><td>getCohortDefinitionSet {CohortGenerator}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Get a cohort definition set</h2>
+
+<h3>Description</h3>
+
+<p>This function supports the legacy way of retrieving a cohort definition set
+from the file system or in a package. This function supports the legacy way of
+storing a cohort definition set in a package with a CSV file, JSON files,
+and SQL files in the 'inst' folder.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+getCohortDefinitionSet(
+  settingsFileName = "Cohorts.csv",
+  jsonFolder = "cohorts",
+  sqlFolder = "sql/sql_server",
+  cohortFileNameFormat = "%s",
+  cohortFileNameValue = c("cohortId"),
+  packageName = NULL,
+  warnOnMissingJson = TRUE,
+  verbose = FALSE
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>settingsFileName</code></td>
+<td>
+<p>The name of the CSV file that will hold the cohort information
+including the cohortId and cohortName</p>
+</td></tr>
+<tr valign="top"><td><code>jsonFolder</code></td>
+<td>
+<p>The name of the folder that will hold the JSON representation
+of the cohort if it is available in the cohortDefinitionSet</p>
+</td></tr>
+<tr valign="top"><td><code>sqlFolder</code></td>
+<td>
+<p>The name of the folder that will hold the SQL representation
+of the cohort.</p>
+</td></tr>
+<tr valign="top"><td><code>cohortFileNameFormat</code></td>
+<td>
+<p>Defines the format string  for naming the cohort
+JSON and SQL files. The format string follows the
+standard defined in the base sprintf function.</p>
+</td></tr>
+<tr valign="top"><td><code>cohortFileNameValue</code></td>
+<td>
+<p>Defines the columns in the cohortDefinitionSet to use
+in conjunction with the cohortFileNameFormat parameter.</p>
+</td></tr>
+<tr valign="top"><td><code>packageName</code></td>
+<td>
+<p>The name of the package containing the cohort definitions.</p>
+</td></tr>
+<tr valign="top"><td><code>warnOnMissingJson</code></td>
+<td>
+<p>Provide a warning if a .JSON file is not found for a
+cohort in the settings file</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>When TRUE, extra logging messages are emitted</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Returns a cohort set data.frame
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>CohortGenerator</em> version 0.7.0 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

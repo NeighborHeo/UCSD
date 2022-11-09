@@ -1,0 +1,45 @@
+DatabaseConnectorDriver
+                        Create a DatabaseConnectorDriver object
+connect                 connect
+createConnectionDetails
+                        createConnectionDetails
+createZipFile           Compress files and/or folders into a single zip
+                        file
+dbConnect,DatabaseConnectorDriver-method
+                        Create a connection to a DBMS
+dbUnloadDriver,DatabaseConnectorDriver-method
+                        Load and unload database drivers
+dbms                    Get the database platform from a connection
+disconnect              Disconnect from the server
+downloadJdbcDrivers     Download DatabaseConnector JDBC Jar files
+dropEmulatedTempTables
+                        Drop all emulated temp tables.
+executeSql              Execute SQL code
+existsTable             Does the table exist?
+getAvailableJavaHeapSpace
+                        Get available Java heap space
+getTableNames           List all tables in a database schema.
+insertTable             Insert a table on the server
+isSqlReservedWord       Test a character vector of SQL names for SQL
+                        reserved words
+jdbcDrivers             How to download and use JDBC drivers for the
+                        various data platforms.
+lowLevelExecuteSql      Execute SQL code
+lowLevelQuerySql        Low level function for retrieving data to a
+                        data frame
+lowLevelQuerySqlToAndromeda
+                        Low level function for retrieving data to a
+                        local Andromeda object
+querySql                Retrieve data to a data.frame
+querySqlToAndromeda     Retrieves data to a local Andromeda object
+renderTranslateExecuteSql
+                        Render, translate, execute SQL code
+renderTranslateQueryApplyBatched
+                        Render, translate, and perform process to
+                        batches of data.
+renderTranslateQuerySql
+                        Render, translate, and query to data.frame
+renderTranslateQuerySqlToAndromeda
+                        Render, translate, and query to local Andromeda
+show,DatabaseConnectorDriver-method
+                        Show an Object

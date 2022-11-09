@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Used to get a list of cohort table names to use when creating...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for getCohortTableNames {CohortGenerator}"><tr><td>getCohortTableNames {CohortGenerator}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Used to get a list of cohort table names to use when creating the cohort
+tables</h2>
+
+<h3>Description</h3>
+
+<p>This function creates a list of table names used by <code><a href="../../CohortGenerator/help/createCohortTables.html">createCohortTables</a></code> to specify
+the table names to create. Use this function to specify the names of the main cohort table
+and cohort statistics tables.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+getCohortTableNames(
+  cohortTable = "cohort",
+  cohortInclusionTable = paste0(cohortTable, "_inclusion"),
+  cohortInclusionResultTable = paste0(cohortTable, "_inclusion_result"),
+  cohortInclusionStatsTable = paste0(cohortTable, "_inclusion_stats"),
+  cohortSummaryStatsTable = paste0(cohortTable, "_summary_stats"),
+  cohortCensorStatsTable = paste0(cohortTable, "_censor_stats")
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>cohortTable</code></td>
+<td>
+<p>Name of the cohort table.</p>
+</td></tr>
+<tr valign="top"><td><code>cohortInclusionTable</code></td>
+<td>
+<p>Name of the inclusion table, one of the tables for storing
+inclusion rule statistics.</p>
+</td></tr>
+<tr valign="top"><td><code>cohortInclusionResultTable</code></td>
+<td>
+<p>Name of the inclusion result table, one of the tables for
+storing inclusion rule statistics.</p>
+</td></tr>
+<tr valign="top"><td><code>cohortInclusionStatsTable</code></td>
+<td>
+<p>Name of the inclusion stats table, one of the tables for storing
+inclusion rule statistics.</p>
+</td></tr>
+<tr valign="top"><td><code>cohortSummaryStatsTable</code></td>
+<td>
+<p>Name of the summary stats table, one of the tables for storing
+inclusion rule statistics.</p>
+</td></tr>
+<tr valign="top"><td><code>cohortCensorStatsTable</code></td>
+<td>
+<p>Name of the censor stats table, one of the tables for storing
+inclusion rule statistics.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A list of the table names as specified in the parameters to this function.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>CohortGenerator</em> version 0.7.0 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

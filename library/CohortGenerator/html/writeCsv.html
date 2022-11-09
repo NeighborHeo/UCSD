@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Used to write a .csv file</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for writeCsv {CohortGenerator}"><tr><td>writeCsv {CohortGenerator}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Used to write a .csv file</h2>
+
+<h3>Description</h3>
+
+<p>This function is used to centralize the function for writing
+.csv files across the HADES ecosystem. This function will automatically
+convert from camelCase in the data.frame to snake_case column names
+in the resulting .csv file as is the standard
+described in:
+https://ohdsi.github.io/Hades/codeStyle.html#Interfacing_between_R_and_SQL
+</p>
+<p>This function may also raise warnings if the data is stored in a format
+that will not work with the HADES standard for uploading to a results database.
+Specifically file names should be in snake_case format, all column headings
+are in snake_case format and where possible the file name should not be plural.
+See <code>isFormattedForDatabaseUpload</code> for a helper function to check a
+data.frame for rules on the column names
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+writeCsv(
+  x,
+  file,
+  append = FALSE,
+  warnOnCaseMismatch = TRUE,
+  warnOnFileNameCaseMismatch = TRUE,
+  warnOnUploadRuleViolations = TRUE
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>A data frame or tibble to write to disk.</p>
+</td></tr>
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>The .csv file to write.</p>
+</td></tr>
+<tr valign="top"><td><code>append</code></td>
+<td>
+<p>When TRUE, append the values of x to an existing file.</p>
+</td></tr>
+<tr valign="top"><td><code>warnOnCaseMismatch</code></td>
+<td>
+<p>When TRUE, raise a warning if columns in the
+data.frame are NOT in camelCase format.</p>
+</td></tr>
+<tr valign="top"><td><code>warnOnFileNameCaseMismatch</code></td>
+<td>
+<p>When TRUE, raise a warning if the file
+name specified is not in snake_case format.</p>
+</td></tr>
+<tr valign="top"><td><code>warnOnUploadRuleViolations</code></td>
+<td>
+<p>When TRUE, this function will provide
+warning messages that may indicate if the data is stored in a format in the
+.csv that may cause problems when uploading to a database.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Returns the input x invisibly.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>CohortGenerator</em> version 0.7.0 <a href="00Index.html">Index</a>]</div>
+</div></body></html>
